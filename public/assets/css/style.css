@@ -1519,7 +1519,7 @@ p {
     color: #fff; }
 /* hicham style */
 .contact-section{
-  margin-top: 200px;
+  margin-top: 20px;
 }
 .contact-section .icon{
   width: 60px;
@@ -1538,5 +1538,29 @@ p {
     font-weight: 700;
     color: #2E2E2E;
 }
+.contact-hero{
+  height: 400px;
+  width: 100vw;
+  background-color: #342AC7;
+}
+.contact-hero h3{
+  padding-top: 200px;
+  font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.contact-hero p{
 
+    color: #ffffffb6;
+}
+
+.about{
+  padding-top: 100px;
+}
+.login{
+  padding-top: 150px;
+}
+.register{
+  padding-top: 150px;
+}
 /* end hicham style */

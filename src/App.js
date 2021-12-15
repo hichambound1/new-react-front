@@ -7,9 +7,10 @@ import About from './site/about/About';
 import Notfound from './site/NotFound/Notfound';
 import Profile from './site/Profile/Profile';
 import Forgetpassword from './site/Forgetpassword/Forgetpassword';
-import Resetpassword from './site/Resetpassword/Ressetpassword';
+
 import Login from './site/Login/Login';
 import Register from './site/Register/Register';
+import ResetPassword from "./site/Resetpassword/ResetPassword";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
            <Route exact path="/contact" element={<Contact/>}/> 
            <Route exact path="/profile" element={<Profile/>}/> 
            <Route exact path="/forgetpassword" element={<Forgetpassword/>}/> 
-           <Route exact path="/forgetpassword" element={<Resetpassword/>}/> 
+           <Route exact path="/resetpassword" element={<ResetPassword/>}/> 
+          
            <Route exact path="/login" element={<Login/>}/> 
            <Route exact path="/register" element={<Register/>}/> 
           <Route path="*" element={<Notfound/>}/> 

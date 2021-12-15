@@ -8,6 +8,10 @@ const Contact = () => {
     return (
         <div className="contact">
             <Navbar/>
+            <div className="contact-hero">
+                <h3 className="text-center">Get In Touch</h3>
+                <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta accusantium id voluptates </p>
+            </div>
             <section className="contact-section">
 		        <div className="container">
                     <div className="row justify-content-center">
