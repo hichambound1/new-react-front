@@ -1517,3 +1517,26 @@ p {
   display: none; }
   .back-to-top:hover {
     color: #fff; }
+/* hicham style */
+.contact-section{
+  margin-top: 200px;
+}
+.contact-section .icon{
+  width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgb(2,0,36);
+          background: linear-gradient(90deg, rgb(8, 1, 131) 0%, rgb(64, 93, 180) 0%, rgb(0, 174, 255) 100%);
+          margin: 0 auto;
+          margin-bottom: 20px;
+          font-size: 20px;
+            color: #fff;  
+}
+
+.contact-section a{
+  font-size: 20px;
+    font-weight: 700;
+    color: #2E2E2E;
+}
+
+/* end hicham style */

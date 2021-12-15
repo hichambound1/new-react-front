@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
 import Navbar from "../../components/Navbar";
@@ -57,9 +58,9 @@ const Home = () => {
                             <i className="lni-baloon"></i>
                         </div>
                         <div className="services-content mt-30">
-                            <h4 className="services-title"><a href="#">Clean</a></h4>
+                            <h4 className="services-title"><Link to="#">Clean</Link></h4>
                             <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div> 
                 </div>
@@ -71,9 +72,9 @@ const Home = () => {
                             <i className="lni-cog"></i>
                         </div>
                         <div className="services-content mt-30">
-                            <h4 className="services-title"><a href="#">Robust</a></h4>
+                            <h4 className="services-title"><Link to="#">Robust</Link></h4>
                             <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div> 
                 </div>
@@ -85,9 +86,9 @@ const Home = () => {
                             <i className="lni-bolt-alt"></i>
                         </div>
                         <div className="services-content mt-30">
-                            <h4 className="services-title"><a href="#">Powerful</a></h4>
+                            <h4 className="services-title"><Link to="#">Powerful</Link></h4>
                             <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div> 
                 </div>
@@ -105,7 +106,7 @@ const Home = () => {
                             <h3 className="title">Quick & Easy <span>to Use Bootstrap Template</span></h3>
                         </div> 
                         <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" className="main-btn">Try it Free</a>
+                        <Link to="#" className="main-btn">Try it Free</Link>
                     </div> 
                 </div>
                 <div className="col-lg-6">
@@ -135,7 +136,7 @@ const Home = () => {
                             <h3 className="title">Modern design <span> with Essential Features</span></h3>
                         </div> 
                         <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" className="main-btn">Try it Free</a>
+                        <Link to="#" className="main-btn">Try it Free</Link>
                     </div> 
                 </div>
                 <div className="col-lg-6 order-lg-first">
@@ -159,7 +160,7 @@ const Home = () => {
                             <h3 className="title"><span>Crafted for</span> SaaS, App and Software Landing Page</h3>
                         </div> 
                         <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="#" className="main-btn">Try it Free</a>
+                        <Link to="#" className="main-btn">Try it Free</Link>
                     </div> 
                 </div>
                 <div className="col-lg-6">
@@ -187,7 +188,7 @@ const Home = () => {
                                 <img src="assets/images/video.png" alt="video"/>
                             </div>
                             <div className="video-icon">
-                                <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" className="video-popup"><i className="lni-play"></i></a>
+                                <Link to="https://www.youtube.com/watch?v=r44RKWyfcFw" className="video-popup"><i className="lni-play"></i></Link>
                             </div>
                         </div> 
                     </div> 
@@ -252,15 +253,15 @@ const Home = () => {
                             <img src="assets/images/team-1.png" alt="Team"/>
                             <div className="social">
                                 <ul>
-                                    <li><a href="#"><i className="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-linkedin-original"></i></a></li>
+                                    <li><Link to="#"><i className="lni-facebook-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-twitter-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-instagram-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-linkedin-original"></i></Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="team-content">
-                            <h5 className="holder-name"><a href="#">Isabela Moreira</a></h5>
+                            <h5 className="holder-name"><Link to="#">Isabela Moreira</Link></h5>
                             <p className="text">Founder and CEO</p>
                         </div>
                     </div> 
@@ -271,15 +272,15 @@ const Home = () => {
                             <img src="assets/images/team-2.png" alt="Team" />
                             <div className="social">
                                 <ul>
-                                    <li><a href="#"><i className="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-linkedin-original"></i></a></li>
+                                    <li><Link to="#"><i className="lni-facebook-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-twitter-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-instagram-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-linkedin-original"></i></Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="team-content">
-                            <h5 className="holder-name"><a href="#">Elon Musk</a></h5>
+                            <h5 className="holder-name"><Link to="#">Elon Musk</Link></h5>
                             <p className="text">Sr. Software Engineer</p>
                         </div>
                     </div> 
@@ -290,15 +291,15 @@ const Home = () => {
                             <img src="assets/images/team-3.png" alt="Team"/>
                             <div className="social">
                                 <ul>
-                                    <li><a href="#"><i className="lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-twitter-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-instagram-filled"></i></a></li>
-                                    <li><a href="#"><i className="lni-linkedin-original"></i></a></li>
+                                    <li><Link to="#"><i className="lni-facebook-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-twitter-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-instagram-filled"></i></Link></li>
+                                    <li><Link to="#"><i className="lni-linkedin-original"></i></Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="team-content">
-                            <h5 className="holder-name"><a href="#">Fiona Smith</a></h5>
+                            <h5 className="holder-name"><Link to="#">Fiona Smith</Link></h5>
                             <p className="text">Business Development Manager</p>
                         </div>
                     </div> 
@@ -465,11 +466,11 @@ const Home = () => {
                         </div>
                         <div className="blog-content">
                             <ul className="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
+                                <li>Posted By: <Link to="#">Admin</Link></li>
                                 <li>03 June, 2023</li>
                             </ul>
                             <p className="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div> 
                 </div> 
@@ -480,11 +481,11 @@ const Home = () => {
                         </div>
                         <div className="blog-content">
                             <ul className="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
+                                <li>Posted By: <Link to="#">Admin</Link></li>
                                 <li>03 June, 2023</li>
                             </ul>
                             <p className="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div>
                 </div> 
@@ -495,11 +496,11 @@ const Home = () => {
                         </div>
                         <div className="blog-content">
                             <ul className="meta">
-                                <li>Posted By: <a href="#">Admin</a></li>
+                                <li>Posted By: <Link to="#">Admin</Link></li>
                                 <li>03 June, 2023</li>
                             </ul>
                             <p className="text">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a className="more" href="#">Learn More <i className="lni-chevron-right"></i></a>
+                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
                         </div>
                     </div> 
                 </div> 

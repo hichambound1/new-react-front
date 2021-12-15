@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return ( 
     <div className="footer">
@@ -15,7 +17,7 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="subscribe-form mt-50">
-                            <form action="#">
+                            <form action="/">
                                 <input type="text" placeholder="Enter eamil" />
                                 <button className="main-btn">Subscribe</button>
                             </form>
@@ -27,15 +29,15 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-lg-4 col-md-6 col-sm-8">
                         <div className="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <a className="logo" href="#">
+                            <Link className="logo" to="">
                                 <img src="assets/images/logo.svg" alt="logo" />
-                            </a>
+                            </Link>
                             <p className="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
                             <ul className="social">
-                                <li><a href="#"><i className="lni-facebook-filled"></i></a></li>
-                                <li><a href="#"><i className="lni-twitter-filled"></i></a></li>
-                                <li><a href="#"><i className="lni-instagram-filled"></i></a></li>
-                                <li><a href="#"><i className="lni-linkedin-original"></i></a></li>
+                                <li><Link to="/"><i className="lni-facebook-filled"></i></Link></li>
+                                <li><Link to="/"><i className="lni-twitter-filled"></i></Link></li>
+                                <li><Link to="/"><i className="lni-instagram-filled"></i></Link></li>
+                                <li><Link to="/"><i className="lni-linkedin-original"></i></Link></li>
                             </ul>
                         </div> 
                     </div>
@@ -46,11 +48,11 @@ const Footer = () => {
                                     <h4 className="title">Quick Link</h4>
                                 </div>
                                 <ul className="link">
-                                    <li><a href="#">Road Map</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Pricing</a></li>
+                                    <li><Link to="/">Road Map</Link></li>
+                                    <li><Link to="/">Privacy Policy</Link></li>
+                                    <li><Link to="/">Refund Policy</Link></li>
+                                    <li><Link to="/">Terms of Service</Link></li>
+                                    <li><Link to="/">Pricing</Link></li>
                                 </ul>
                             </div> 
                             <div className="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
@@ -58,11 +60,11 @@ const Footer = () => {
                                     <h4 className="title">Resources</h4>
                                 </div>
                                 <ul className="link">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Page</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/">Page</Link></li>
+                                    <li><Link to="/">Portfolio</Link></li>
+                                    <li><Link to="/">Blog</Link></li>
+                                    <li><Link to="/">Contact</Link></li>
                                 </ul>
                             </div> 
                         </div> 
@@ -87,7 +89,7 @@ const Footer = () => {
                     <div className="col-lg-12">
                         <div className="copyright d-sm-flex justify-content-between">
                             <div className="copyright-content">
-                                <p className="text">Designed and Developed by <a href="" rel="nofollow">UIdeck</a></p>
+                                <p className="text">Designed and Developed by <Link to="" rel="nofollow">UIdeck</Link></p>
                             </div> 
                         </div>
                     </div>

@@ -14,12 +14,12 @@ const Navbar = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <nav className="navbar navbar-expand-lg">
-                                <a className="navbar-brand" href="index.html">
+                                <Link className="navbar-brand" to="index.html">
                                 <Link to="/">
                                             
                                     <img src="assets/images/logo.svg" alt="Logo" />
                                         </Link>
-                                </a>
+                                </Link>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="toggler-icon"></span>
                                     <span className="toggler-icon"></span>
@@ -52,7 +52,7 @@ const Navbar = () => {
                                 </div> 
                                 
                                 <div className="navbar-btn d-none d-sm-inline-block">
-                                    {/* <a href="#pricing">Free Trial</a> */}
+                                    {/* <Link to="#pricing">Free Trial</Link> */}
                                     <Link to="/login" className="main-btn" data-scroll-nav="0" >
                                         Get started
                                     </Link>
