@@ -1566,4 +1566,27 @@ p {
 .profile{
   padding-top: 150px;
 }
+.mydishes{
+  padding-top: 150px;
+}
+
+
+.owl-theme .item{
+  text-align: center;
+  border-right: 1px solid rgba(2, 2, 2, 0.171);
+  padding:  1px 5px;
+  margin: 0;
+  cursor: pointer;
+}
+.owl-theme .item p {
+  margin: 5px 0px;
+}
+.owl-theme .item.active{
+  background-color: #F0F0F0 ;
+  color: #EC615E;
+}
+.owl-item.active{
+  margin: 0;
+  
+}
 /* end hicham style */

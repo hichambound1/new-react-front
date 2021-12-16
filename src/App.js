@@ -11,7 +11,17 @@ import Forgetpassword from './site/Forgetpassword/Forgetpassword';
 import Login from './site/Login/Login';
 import Register from './site/Register/Register';
 import ResetPassword from "./site/Resetpassword/ResetPassword";
+import Myresto from "./site/myresto/Myresto";
+import axios from 'axios';
+axios.defaults.headers.post['Accept'] = 'application/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.withCredentials = true;
 
+axios.interceptors.request.use(function (config){
+    const token = localStorage.getItem('auth_token');
+    config.headers.Authorization = token ?  `Bearer ${token}` : '';
+    return config;
+});
 function App() {
   return (
     <Router>
@@ -25,53 +35,11 @@ function App() {
            <Route exact path="/profile" element={<Profile/>}/> 
            <Route exact path="/forgetpassword" element={<Forgetpassword/>}/> 
            <Route exact path="/resetpassword" element={<ResetPassword/>}/> 
-          
+           <Route exact path="/myresto" element={<Myresto/>}/> 
            <Route exact path="/login" element={<Login/>}/> 
            <Route exact path="/register" element={<Register/>}/> 
           <Route path="*" element={<Notfound/>}/> 
         </Routes>
-          {/* <Switch> */}
-            
-            
-            {/* <Route path="/oneresto/:id">
-                <Oneresto />
-            </Route> */}
-         
-            {/* <Route path="/dish/:id">
-              <Dish />
-            </Route> */}
-          
-            {/* <Route path="/pricing">
-              <Pricing />
-            </Route> */}
-
-            {/* <Route path="/profile">
-              <Profile />
-            </Route> */}
-
-
-
-           
-            {/* <Route path="/login">
-              {localStorage.getItem('auth_token') ? <Redirect to="/" />  : <Login />}
-            </Route>
-            <Route path="/register">
-              {localStorage.getItem('auth_token') ? <Redirect to="/" /> : <Register />}
-            </Route> */}
-            
-            {/* <Route path="/ForgotePassword">
-              <ForgotePassword />
-            </Route>
-            <Route path="/resetpassword">
-              <ResetPassword />
-            </Route> */}
-
-            {/* <Route path="*">
-              <Notfound />
-            </Route> */}
-
-
-          {/* </Switch> */}
         </div>
 
       </div>
