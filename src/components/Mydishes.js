@@ -44,12 +44,12 @@ const Mydishes = () => {
     const [isloadingdish, setIsLoadingdish] = useState(true);
     useEffect( ()=>{
         axios.defaults.withCredentials = true;
-        // axios.get('http://localhost:8000/api/mydishes/'+JSON.parse(localStorage.getItem('auth_user')).id)
-        //     .then(response => {   
-        //         setData(response.data.data) 
-        //         setIsLoadingdish(false)           
+        axios.get('http://localhost:8000/api/mydishes/'+JSON.parse(localStorage.getItem('auth_user')).id)
+            .then(response => {   
+                setData(response.data.data) 
+                setIsLoadingdish(false)           
                
-        //     })
+            })
 
         fetch('http://localhost:8000/api/category')
         .then(response =>response.json())
@@ -100,12 +100,12 @@ const Mydishes = () => {
                         }
                     </div>
                 </div>
-                    <div className="row">
+                    {/* <div className="row">
                     {isloadingdish && <p>loading...</p>}
                     {data.map((item)=>(
 
                         <div className="col-lg-3 col-md-4 col-sm-6 col-6" key={item.id}>
-                            {/* <Link to="/dish"> */}
+                           
                                 <div className="small">
                                     <article className="recipe">
                                     <div className="pizza-box">
@@ -124,11 +124,44 @@ const Mydishes = () => {
                                     </div>
                                     </article>
                                 </div>
-                            {/* </Link> */}
+                           
                         </div>
     ))}
 
+                    </div> */}
+                    <section id="blog" className="blog-area pt-120">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-6">
+                    <div className="section-title pb-35">
+                        <div className="line"></div>
+                        <h3 className="title"><span>Our Recent</span> Blog Posts</h3>
                     </div>
+                </div>
+            </div> 
+
+            <div className="row justify-content-center">
+            {isloadingdish && <p>loading...</p>}
+                    {data.map((item)=>(
+                <div className="col-lg-3 col-md-7" key={item.id}>
+                    <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div className="blog-image">
+                            <img src={`http://localhost:8000/`+item.photo} height='200px' alt="blog" />
+                        </div>
+                        <div className="blog-content p-2">
+                           
+                               
+                            <Link className="more text-capitalize " to="#">{item.description_en} </Link>
+                            <p className="text">{item.description_en}</p>
+                            <p> {item.prix}<span>{item.currency}</span></p>
+                        </div>
+                    </div> 
+                </div> 
+                ))}
+               
+            </div> 
+        </div> 
+    </section>
                         
             </div>
             <Footer />

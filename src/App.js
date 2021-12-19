@@ -13,6 +13,7 @@ import Register from './site/Register/Register';
 import ResetPassword from "./site/Resetpassword/ResetPassword";
 import Myresto from "./site/myresto/Myresto";
 import axios from 'axios';
+import Policies from "./site/policies/Policies";
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -31,6 +32,7 @@ function App() {
           <Routes>
            <Route exact path="/" element={<Home/>}/> 
            <Route exact path="/about" element={<About/>}/> 
+           <Route exact path="/policies" element={<Policies/>}/> 
            <Route exact path="/contact" element={<Contact/>}/> 
            <Route exact path="/profile" element={<Profile/>}/> 
            <Route exact path="/forgetpassword" element={<Forgetpassword/>}/> 

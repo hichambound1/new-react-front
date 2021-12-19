@@ -118,8 +118,10 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-5 d-md-flex d-none align-items-stretch">
-                                        <div className="info-wrap w-100 p-5 img" style={{ backgroundImage: 'url(/images/jay-unsplash.jpg)' }}>
-                            </div>
+                                        {/* <div className="info-wrap w-100 p-5 img" style={{ backgroundImage: 'url(/images/contact.svg)' }}> */}
+                                        <div className="info-wrap w-100 d-flex p-5 img" >
+                                            <img src="assets/images/contact.svg" alt="" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

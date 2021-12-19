@@ -1566,6 +1566,8 @@ p {
 .profile{
   padding-top: 150px;
 }
+
+
 .mydishes{
   padding-top: 150px;
 }
@@ -1589,4 +1591,70 @@ p {
   margin: 0;
   
 }
+/* dish */
+.recipe, .pizza-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  
+}
+.pizza-box {
+  flex: 3 1 30ch;
+  height: calc(182px + 5vw);
+  overflow: hidden;
+}
+.pizza-box img {
+  max-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.recipe {
+  /* border: 2px solid #f2f2f2; */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.001), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.recipe-content {
+  padding: 16px 22px;
+  flex: 4 1 40ch;
+}
+.recipe-desc{
+  margin-bottom: 0px;
+}
+.recipe-title {
+  margin: 0;
+  font-size: 17px;
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+}
+.recipe-title a {
+  text-decoration: none;
+  color: inherit;
+  color: #ec925e;
+  font-weight: bold;
+}
+.small {
+  
+  line-height: 1.55;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #454545;
+  margin-top: 19px;
+}
+.small .price {
+  width: 100%;
+}
+.small .price p{
+  text-align: end;
+  padding-right: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* end dish */
 /* end hicham style */

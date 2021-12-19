@@ -33,6 +33,7 @@ const Profile = () => {
   const [cover, setCover] = useState();
   const [errorlogo, setErrorlogo] = useState();
   const [errorcover, setErrorcover] = useState();
+  const [errormail, setErrormail] = useState();
 
   const [isloadingsubmit, setIsLoadingsubmit] = useState(false);
   const handleSubmit = e => {
@@ -72,10 +73,14 @@ const Profile = () => {
             
             console.log('bad');
             setIsLoadingsubmit(false);
+            console.log(error.response);
             if(error.response.data.errors){
                 setErrorlogo(error.response.data.errors.logo)
                 setErrorcover(error.response.data.errors.cover)
-               
+                
+            }else{
+                setErrormail(error.response.data.message)
+
             }
         }
         )
@@ -85,99 +90,100 @@ const Profile = () => {
     return (
         <div className="profile">
             <Navbar/>
+          
             
             <div className="container p-3 shadow rounded">
                 <h2 className="text-center text-capitalize m-3">Profile</h2>
-           <div className="row">
-           <div className="col-lg-8">
+                <div className="row">
+                            <div className="col-lg-8">
 
-           <form onSubmit={handleSubmit}   encType="multipart/form-data">
-            <div className="row">
+                            <form onSubmit={handleSubmit}   encType="multipart/form-data">
+                                <div className="row">
 
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="name">Business Name</label>
-                        <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" required/>
-                    </div>
-                </div>
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="address">Address</label>
-                        <input type="text"  className="form-control"  onChange={e => setAddressen(e.target.value)}  value={addressen} name="address" placeholder="Enter address" />
-                    </div>
-                </div>
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="phone">Phone</label>
-                        <input type="text"  className="form-control"  onChange={e => setPhone(e.target.value)}  value={phone} name="phone" placeholder="Enter phone" />
-                    </div>
-                </div>
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input type="email"  className="form-control"  onChange={e => setEmail(e.target.value)}  value={email} name="email" placeholder="Enter email" />
-                    </div>
-                </div>
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="logo">Logo</label>
-                        <img src={'http://localhost:8000/'+user.logo} width="100px" alt="" />
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="name">Business Name</label>
+                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" required/>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="address">Address</label>
+                                            <input type="text"  className="form-control"  onChange={e => setAddressen(e.target.value)}  value={addressen} name="address" placeholder="Enter address" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="phone">Phone</label>
+                                            <input type="text"  className="form-control"  onChange={e => setPhone(e.target.value)}  value={phone} name="phone" placeholder="Enter phone" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="email">Email</label>
+                                            <input type="email"  className="form-control"  onChange={e => setEmail(e.target.value)}  value={email} name="email" placeholder="Enter email" />
+                                            <span className="text-danger">{errormail}</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="logo">Logo</label>
+                                            <img src={'http://localhost:8000/'+user.logo} width="100px" alt="" />
+                                            
+                                            <input type="file" onChange={e => setLogo(e.target.files[0])}  className="form-control dropify" name="logo"  />
+                                            <span className="text-danger">{errorlogo}</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="cover">Cover</label>
+                                            <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
+                                            <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
+                                            <span className="text-danger">{errorcover}</span>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12 p-3">
+                                        <div className="form-group">
+                                            <label htmlFor="description">Description</label>
+                                            <textarea name="description" id="description" cols="30" rows="4"  onChange={e => setDescriptioneen(e.target.value)}  value={descriptionen} className="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6  p-3">
+                                        <div className="form-group">
+                                            <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit}   className="main-btn w-100 text-white " name="submit"  />
+                                        </div>
+                                    </div>
+                                
+
+
+                                    
+                                </div>
+                            </form>
+                            </div>
                         
-                        <input type="file" onChange={e => setLogo(e.target.files[0])}  className="form-control dropify" name="logo"  />
-                        <span className="text-danger">{errorlogo}</span>
-                    </div>
-                </div>
-                <div className="col-md-6 p-3">
-                    <div className="form-group">
-                        <label htmlFor="cover">Cover</label>
-                        <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                        <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
-                        <span className="text-danger">{errorcover}</span>
-                    </div>
-                </div>
-                <div className="col-md-12 p-3">
-                    <div className="form-group">
-                        <label htmlFor="description">Description</label>
-                        <textarea name="description" id="description" cols="30" rows="4"  onChange={e => setDescriptioneen(e.target.value)}  value={descriptionen} className="form-control"></textarea>
-                    </div>
-                </div>
-                <div className="col-md-6  p-3">
-                    <div className="form-group">
-                        <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit}   className="main-btn w-100 text-white " name="submit"  />
-                    </div>
-                </div>
-               
 
-
+                            <div className="col-lg-4 text-center ">
+                                <div className="">
+                                <br /> 
+                                <QRCode
+                                    id="qr-gen"
+                                    value={"http://restqr.com/" + nameen}
+                                    size={250}
+                                    level={"H"}
+                                    includeMargin={true}
+                                    /> 
+                                <p>
+                                    
+                                <button type="button" className=" btn btn-dark" onClick={downloadQRCode}>
+                                        Download QR Code
+                                    </button>
+                                </p>
+                                    </div>
+                            </div>  
                 
-            </div>
-           </form>
-           </div>
-           
-
-            <div className="col-lg-4 text-center ">
-                <div className="">
-                <br /> 
-                <QRCode
-                    id="qr-gen"
-                    value={"http://restqr.com/" + nameen}
-                    size={250}
-                    level={"H"}
-                    includeMargin={true}
-                    /> 
-                 <p>
-                    
-                  <button type="button" className=" btn btn-dark" onClick={downloadQRCode}>
-                        Download QR Code
-                    </button>
-                </p>
-                    </div>
                 </div>
-                    
-           
-            </div>
             
-        </div>
+            </div>
             <Footer/>
         </div>
 
