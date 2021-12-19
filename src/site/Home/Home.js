@@ -9,93 +9,8 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Hero />
-
-            
-    
-    <div className="brand-area pt-90">
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
-                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <img src="assets/images/brand-1.png" alt="brand"/>
-                        </div> 
-                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                            <img src="assets/images/brand-2.png" alt="brand"/>
-                        </div> 
-                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
-                            <img src="assets/images/brand-3.png" alt="brand"/>
-                        </div> 
-                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                            <img src="assets/images/brand-4.png" alt="brand"/>
-                        </div> 
-                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                            <img src="assets/images/brand-5.png" alt="brand"/>
-                        </div> 
-                    </div> 
-                </div>
-            </div>   
-        </div> 
-    </div>
-    
-    <section id="features" className="services-area pt-120">
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-lg-10">
-                    <div className="section-title text-center pb-40">
-                        <div className="line m-auto"></div>
-                        <h3 className="title">Clean and simple design, <span> Comes with everything you need to get started!</span></h3>
-                    </div> 
-                </div>
-            </div> 
-            <div className="row justify-content-center">
-                <div className="col-lg-4 col-md-7 col-sm-8">
-                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div className="services-icon">
-                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
-                            <img className="shape-1" src="assets/images/services-shape-1.svg" alt="shape"/>
-                            <i className="lni-baloon"></i>
-                        </div>
-                        <div className="services-content mt-30">
-                            <h4 className="services-title"><Link to="#">Clean</Link></h4>
-                            <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
-                        </div>
-                    </div> 
-                </div>
-                <div className="col-lg-4 col-md-7 col-sm-8">
-                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div className="services-icon">
-                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
-                            <img className="shape-1" src="assets/images/services-shape-2.svg" alt="shape"/>
-                            <i className="lni-cog"></i>
-                        </div>
-                        <div className="services-content mt-30">
-                            <h4 className="services-title"><Link to="#">Robust</Link></h4>
-                            <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
-                        </div>
-                    </div> 
-                </div>
-                <div className="col-lg-4 col-md-7 col-sm-8">
-                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div className="services-icon">
-                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
-                            <img className="shape-1" src="assets/images/services-shape-3.svg" alt="shape"/>
-                            <i className="lni-bolt-alt"></i>
-                        </div>
-                        <div className="services-content mt-30">
-                            <h4 className="services-title"><Link to="#">Powerful</Link></h4>
-                            <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
-                            <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link>
-                        </div>
-                    </div> 
-                </div>
-            </div> 
-        </div> 
-    </section>
-    
+            <Hero />    
+     {/* about */}
     <section id="about" className="about-area pt-70">
         <div className="container">
             <div className="row">
@@ -120,9 +35,101 @@ const Home = () => {
             <img src="assets/images/about-shape-1.svg" alt="shape" />
         </div>
     </section>
+    {/* services */}
+    <section id="features" className="services-area pt-120">
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-lg-10">
+                    <div className="section-title text-center pb-40">
+                        <div className="line m-auto"></div>
+                        <h3 className="title">Clean and simple design, <span> Comes with everything you need to get started!</span></h3>
+                    </div> 
+                </div>
+            </div> 
+            <div className="row justify-content-center">
+                <div className="col-lg-4 col-md-7 col-sm-8">
+                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div className="services-icon">
+                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
+                            <img className="shape-1" src="assets/images/services-shape-1.svg" alt="shape"/>
+                           
+                            <i class="lni lni-headphone-alt"></i>
+                        </div>
+                        <div className="services-content mt-30">
+                            <h4 className="services-title"><Link to="#">24/7 SUPPORT</Link></h4>
+                            <p className="text">Our support team helps you online 24/7 on our website</p>
+                            {/* <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link> */}
+                        </div>
+                    </div> 
+                </div>
+                <div className="col-lg-4 col-md-7 col-sm-8">
+                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div className="services-icon">
+                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
+                            <img className="shape-1" src="assets/images/services-shape-2.svg" alt="shape"/>
+                            <i className="lni-cog"></i>
+                        </div>
+                        <div className="services-content mt-30">
+                            <h4 className="services-title"><Link to="#">Robust</Link></h4>
+                            <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            {/* <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link> */}
+                        </div>
+                    </div> 
+                </div>
+                <div className="col-lg-4 col-md-7 col-sm-8">
+                    <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div className="services-icon">
+                            <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
+                            <img className="shape-1" src="assets/images/services-shape-3.svg" alt="shape"/>
+                            <i className="lni-bolt-alt"></i>
+                        </div>
+                        <div className="services-content mt-30">
+                            <h4 className="services-title"><Link to="#">Powerful</Link></h4>
+                            <p className="text">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            {/* <Link className="more" to="#">Learn More <i className="lni-chevron-right"></i></Link> */}
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+        </div> 
+    </section>
+   {/* partners */}
+    <div className="brand-area pt-90">
+        <div className="container">
+        <div className="row justify-content-center">
+                <div className="col-lg-10">
+                    <div className="section-title text-center pb-40">
+                        <div className="line m-auto"></div>
+                        <h3 className="title">Owr best menu, <span> Comes with the best dishes you need !</span></h3>
+                    </div> 
+                </div>
+            </div> 
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="brand-logo d-flex align-items-center justify-content-center justify-content-md-between">
+                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <img src="assets/images/brand-1.png" alt="brand"/>
+                        </div> 
+                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                            <img src="assets/images/brand-2.png" alt="brand"/>
+                        </div> 
+                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                            <img src="assets/images/brand-3.png" alt="brand"/>
+                        </div> 
+                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                            <img src="assets/images/brand-4.png" alt="brand"/>
+                        </div> 
+                        <div className="single-logo mt-30 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                            <img src="assets/images/brand-5.png" alt="brand"/>
+                        </div> 
+                    </div> 
+                </div>
+            </div>   
+        </div> 
+    </div>
     
   
-    
+{/*     
     <section className="about-area pt-70">
         <div className="about-shape-2">
             <img src="assets/images/about-shape-2.svg" alt="shape"/>
@@ -506,7 +513,7 @@ const Home = () => {
                 </div> 
             </div> 
         </div> 
-    </section>
+    </section> */}
             <Footer/>
         
       
