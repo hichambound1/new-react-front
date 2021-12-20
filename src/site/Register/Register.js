@@ -79,7 +79,7 @@ const Register = () => {
                                             <div className="text w-100">
                                                 <h2>Welcome to Sing up</h2>
                                                 <p className="text-light">You have an account?</p>
-                                                <a href="/login" className="btn btn-white btn-outline-white">Sign in</a>
+                                                <Link to="/login" className="btn btn-white btn-outline-white">Sign in</Link>
                                             </div>
                                         </div>
                                         <div className="login-wrap p-4 p-lg-5">

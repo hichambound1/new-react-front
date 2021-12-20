@@ -3,9 +3,12 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import axios from 'axios';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Editdish from './Editdish';
+import Adddish from './Adddish';
 const Mydishes = () => {
     const options = {
         
@@ -75,6 +78,36 @@ const Mydishes = () => {
             setDish(newdata);
         }
     }
+    // delete dish
+    const handleDelete = (dishid) =>   {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+
+                axios.defaults.withCredentials = true;
+                axios.delete('http://localhost:8000/api/dish/delete/'+dishid)
+                .then(response => {               
+                    console.log('good');       
+                    // history.go(0)
+                }).catch( err =>{
+                    console.log('bad');       
+                })
+              swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+              });
+              
+
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });
+    }
     return ( 
         <div className="">
             <Navbar/>
@@ -99,37 +132,11 @@ const Mydishes = () => {
                         )
                         }
                     </div>
+                    <Adddish categories={categories}/>
                 </div>
-                    {/* <div className="row">
-                    {isloadingdish && <p>loading...</p>}
-                    {data.map((item)=>(
-
-                        <div className="col-lg-3 col-md-4 col-sm-6 col-6" key={item.id}>
-                           
-                                <div className="small">
-                                    <article className="recipe">
-                                    <div className="pizza-box">
-                                        <img src={`http://localhost:8000/`+item.photo}  width="1500" height="1368" alt="" />
-                                    </div>
-                                    <div className="recipe-content">
-                                            <h1 className="recipe-title"><Link to="/dish">{item.name_en}</Link></h1>
-                                            
-                                            <p className="recipe-desc">{item.description_en} </p>
-                                        
-                                    </div>
-                                    <div className="price d-flex justify-content-around">
-                                        
-                                    
-                                        <p> {item.prix}<span>{item.currency}</span></p>
-                                    </div>
-                                    </article>
-                                </div>
-                           
-                        </div>
-    ))}
-
-                    </div> */}
+                   
     <section id="blog" className="blog-area pt-120">
+        
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
@@ -143,17 +150,22 @@ const Mydishes = () => {
             <div className="row justify-content-center">
             {isloadingdish && <p>loading...</p>}
                     {data.map((item)=>(
-                <div className="col-lg-3 col-md-7" key={item.id}>
-                    <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div className="blog-image">
-                            <img src={`http://localhost:8000/`+item.photo} height='200px' alt="blog" />
+                <div className="col-lg-3 col-md-7 p-2" key={item.id}>
+                    <div className="single-blog mt-30 wow fadeIn  " data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div className="blog-image ">
+                            <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />
                         </div>
                         <div className="blog-content p-2">
                            
                                
-                            <Link className="more text-capitalize " to="#">{item.description_en} </Link>
+                            <Link className="more text-capitalize " to="#">{item.name_en} </Link>
                             <p className="text">{item.description_en}</p>
                             <p> {item.prix}<span>{item.currency}</span></p>
+                        </div>
+                        <div className="actions p-2 d-flex justify-content-around">
+
+                            <div><Editdish  olddish={item} categories={categories}/></div>
+                            <div role="button" onClick={()=>handleDelete(item.id)}><i className="lni lni-trash  bg-danger text-white p-2 rounded-pill"></i></div>
                         </div>
                     </div> 
                 </div> 
