@@ -1675,4 +1675,74 @@ p {
   transition: 1s;
 }
 /* endclose dish */
+/* hero */
+
+.header-content{
+  /* top: 25%; */
+  margin: 0 !important;
+}
+
+  .img-header-left{
+      position: absolute !important;
+      z-index: -1;
+      top: 0;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+  }
+  .header-image{
+  
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+      
+}
+  .content-header-right .my-auto{
+      width: 100%;
+      background: rgba(114, 114, 114, 0.25);
+      backdrop-filter: blur( 9px );
+      -webkit-backdrop-filter: blur( 9px );
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 30px;
+  }
+  .content-header-right .my-auto .d-flex img{
+      width: 300px;
+  }
+  .content-header-right .my-auto h1,.content-header-right h5,.content-header-right i{
+      /* font-size: 35px !important; */
+      color: white !important;
+  }
+
+@media  (max-width: 768px){
+
+
+  .content-header-right .my-auto{
+      padding: 10px;
+  }
+  .content-header-right .my-auto .d-flex img{
+      width: 200px;
+  }
+  .content-header-right .my-auto .d-flex h1{
+      font-size: 30px !important;
+  }
+  .content-header-right .my-auto .d-flex h5{
+      font-size: 14px !important;
+  }
+  .rounded-hero-icon{
+      margin: 0 3px !important;
+  }
+  .rounded-hero-icon img{
+      width: 30px;
+  }
+  .rounded-hero-icon p{
+      font-size: 14px;
+  }
+}
+
+
+.rounded-hero-icon{
+  border-radius: 10px;
+}
+/* hero */
 /* end hicham style */

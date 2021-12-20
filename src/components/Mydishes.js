@@ -77,7 +77,7 @@ const Mydishes = () => {
     }
     return ( 
         <div className="">
-            <Navbar/>
+           
             <div className="container mt-5 mydishes">
                 <div className="row my-5">
                     <div className="btns">
@@ -100,35 +100,7 @@ const Mydishes = () => {
                         }
                     </div>
                 </div>
-                    {/* <div className="row">
-                    {isloadingdish && <p>loading...</p>}
-                    {data.map((item)=>(
-
-                        <div className="col-lg-3 col-md-4 col-sm-6 col-6" key={item.id}>
-                           
-                                <div className="small">
-                                    <article className="recipe">
-                                    <div className="pizza-box">
-                                        <img src={`http://localhost:8000/`+item.photo}  width="1500" height="1368" alt="" />
-                                    </div>
-                                    <div className="recipe-content">
-                                            <h1 className="recipe-title"><Link to="/dish">{item.name_en}</Link></h1>
-                                            
-                                            <p className="recipe-desc">{item.description_en} </p>
-                                        
-                                    </div>
-                                    <div className="price d-flex justify-content-around">
-                                        
-                                    
-                                        <p> {item.prix}<span>{item.currency}</span></p>
-                                    </div>
-                                    </article>
-                                </div>
-                           
-                        </div>
-    ))}
-
-                    </div> */}
+                  
     <section id="blog" className="blog-area pt-120">
         <div className="container">
             <div className="row">
@@ -151,7 +123,7 @@ const Mydishes = () => {
                         <div className="blog-content p-2">
                            
                                
-                            <Link className="more text-capitalize " to="#">{item.description_en} </Link>
+                            <Link className="more text-capitalize " to={`/dish/${item.id}`}>{item.name_en} </Link>
                             <p className="text">{item.description_en}</p>
                             <p> {item.prix}<span>{item.currency}</span></p>
                         </div>
@@ -164,7 +136,7 @@ const Mydishes = () => {
     </section>
                         
             </div>
-            <Footer />
+        
         </div>
      );
 }

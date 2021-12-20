@@ -102,9 +102,9 @@ const Dish = () => {
 
     return ( 
         <div>
-            <div>
+         
                 <Navbar />
-            </div>
+           
             <div className="container mt-5 dishpage">
         {isloadingdish && 'loading...'}
                 <div className="row">

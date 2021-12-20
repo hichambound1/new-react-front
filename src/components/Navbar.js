@@ -44,7 +44,7 @@ const Navbar = () => {
                     <div className="dropdown-menu " aria-labelledby="navbarDropdown">
                         <Link className="dropdown-item text-dark text-center" to="/profile">Profile</Link>
                         <Link className="dropdown-item text-dark text-center" to="/myresto">My menu</Link>
-                        <Link className="dropdown-item text-dark text-center" to="#">Preview  my menu</Link>
+                        <Link className="dropdown-item text-dark text-center" to={`/menu/${JSON.parse(localStorage.getItem('auth_user')).id}`}>Preview  my menu</Link>
                         <p className="dropdown-item text-dark text-center" style={{cursor:'pointer'} }onClick={handleLogout}>Logout</p>
                     
                     </div>
@@ -95,17 +95,7 @@ const Navbar = () => {
                                                 Contact
                                             </Link>
                                         </li>
-                                        {/* <li className="nav-item dropdown">
-                                            <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                            Dropdown
-                                            </Link>
-                                            <div className="dropdown-menu " aria-labelledby="navbarDropdown">
-                                            <Link className="dropdown-item text-dark text-center" to="/profile">Profile</Link>
-                                            <Link className="dropdown-item text-dark text-center" to="/myresto">My menu</Link>
-                                            <Link className="dropdown-item text-dark text-center" to="#">Preview  my menu</Link>
-                                            
-                                            </div>
-                                        </li> */}
+                                        
                                        
                                         
                                         

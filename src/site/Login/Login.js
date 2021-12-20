@@ -24,8 +24,6 @@ const Login = () => {
                         email: email,
                         password: password,
                     }).then(response => {
-                            
-
                             setErrormail('')
                             setErrorpass('')
                             setError('')
@@ -94,7 +92,7 @@ const Login = () => {
                                             </div>
                                             <div className="form-group d-md-flex">
                                                 <div className="w-100 text-md-right">
-                                                    <Link to="/forgotepassword">Forgot Password</Link>
+                                                    <Link to="/forgetpassword">Forgot Password</Link>
                                                 </div>
                                             </div>
                                         </form>
