@@ -14,6 +14,7 @@ import ResetPassword from "./site/Resetpassword/ResetPassword";
 import Myresto from "./site/myresto/Myresto";
 import axios from 'axios';
 import Policies from "./site/policies/Policies";
+import Dishpage from "./site/Dish/Dishpage";
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
@@ -30,12 +31,14 @@ function App() {
     
           <div className="content">
           <Routes>
+        
            <Route exact path="/" element={<Home/>}/> 
            <Route exact path="/about" element={<About/>}/> 
            <Route exact path="/policies" element={<Policies/>}/> 
            <Route exact path="/contact" element={<Contact/>}/> 
            <Route exact path="/profile" element={<Profile/>}/> 
            <Route exact path="/forgetpassword" element={<Forgetpassword/>}/> 
+           <Route exact path="/dish/:id" element={<Dishpage/>}/> 
            <Route exact path="/resetpassword" element={<ResetPassword/>}/> 
            <Route exact path="/myresto" element={<Myresto/>}/> 
            <Route exact path="/login" element={<Login/>}/> 

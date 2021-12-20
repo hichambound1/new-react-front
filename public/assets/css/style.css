@@ -1566,6 +1566,9 @@ p {
 .profile{
   padding-top: 150px;
 }
+.dishpage{
+  padding-top: 100px;
+}
 
 
 .mydishes{
@@ -1657,4 +1660,19 @@ p {
 }
 
 /* end dish */
+/* close dish */
+.item .close {
+  padding: 12px;
+  position: absolute;
+  top: 0;
+  border-radius: 20px;
+  margin: 0px !important;
+  cursor: pointer;
+}
+.item .close:hover{
+  background-color: #454545;
+  color: #f5f6f9;
+  transition: 1s;
+}
+/* endclose dish */
 /* end hicham style */

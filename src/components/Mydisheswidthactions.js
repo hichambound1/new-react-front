@@ -157,8 +157,8 @@ const Mydishes = () => {
                         </div>
                         <div className="blog-content p-2">
                            
-                               
-                            <Link className="more text-capitalize " to="#">{item.name_en} </Link>
+                   
+                            <Link className="more text-capitalize " to={`/dish/${item.id}`} >{item.name_en} </Link>
                             <p className="text">{item.description_en}</p>
                             <p> {item.prix}<span>{item.currency}</span></p>
                         </div>

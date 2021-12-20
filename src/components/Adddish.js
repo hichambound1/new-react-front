@@ -66,91 +66,7 @@ const Adddish = (props) => {
         });
     }
     return ( 
-        <div>
-            {/* <button type="button" className="btn btn-primary border-0 float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i className="fa fa-plus text-white" aria-hidden="true"></i> Add Dish
-            </button>
-
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-lg">
-                    <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title text-danger" id="exampleModalLabel">Add Dish</h5>
-                        <button type="button" className="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                            <form onSubmit={handleSubmit}   encType="multipart/form-data">
-                            <span className="text-danger">{errorgenerale}</span>
-                            <span className="text-danger">{erroruser}</span>
-                             <div className="row">
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="name" className="mb-2">Name</label>
-                                        <input type="text" value={name}  onChange={e => setName(e.target.value)}   className="form-control" name="name" placeholder="Enter Name" />
-                                        <span className="text-danger">{errorname}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="category" className="mb-2">Category</label>
-                                        <select name="category"  onChange={e => setCategory(e.target.value)}  className="form-control">
-                                            <option disabled>Select a category</option>
-                                            {categories.map((item)=>(
-                                                <option key={item.id}  value={item.id}>{item.name_en}</option>
-                                            ))}
-                                        </select>
-                                        <span className="text-danger">{errorcategory}</span>
-                                        
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="price" className="mb-2">Price</label>
-                                        <input type="number" value={price}  onChange={e => setPrice(e.target.value)}   className="form-control" name="price" placeholder="Enter price" />
-                                        <span className="text-danger">{errorprice}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="currency" className="mb-2">Currency</label>
-                                        <input type="text" value={currency}  onChange={e => setCurrency(e.target.value)}   className="form-control" name="currency" placeholder="$/.د.م/€/£" />
-                                        <span className="text-danger">{errorcurrency}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="description">Description</label>
-                                        <textarea name="description" value={description}  onChange={e => setDescription(e.target.value)}  id="description" cols="30" rows="4" className="form-control"></textarea>
-                                        <span className="text-danger">{errordescription}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="ingredients">Ingredients</label>
-                                        <textarea name="ingredients" value={ingredients}  onChange={e => setIngredients(e.target.value)}  id="ingredients" cols="30" rows="4" className="form-control"></textarea>
-                                        <span className="text-danger">{erroringredients}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 ">
-                                    <div className="form-group">
-                                        <label htmlFor="photo">Photo</label>
-                                        <input name="photo"   onChange={e => setPhotoupload(e.target.files[0])}  type="file" className="form-control" />
-                                        <span className="text-danger">{errorphoto}</span>
-                                    </div>
-                                </div>
-                                <div className="col-md-12  p-3">
-                                    <div className="form-group">
-                                        <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit} className="w-50 mx-auto form-control bg-danger text-white btn btn-danger" name="submit"  />
-                                    </div>
-                                </div>
-                             </div>
-                            </form>
-                    </div>
-                   
-                    </div>
-                </div>
-            </div> */}
-           
+        <div>         
                 <button type="button" className="btn btn-primary   border-0" data-toggle="modal" data-target="#exampleModal">
                 <i className="fa fa-plus text-white" aria-hidden="true"></i> Add Dish
                 </button>
@@ -225,7 +141,7 @@ const Adddish = (props) => {
                                 </div>
                                 <div className="col-md-12  p-3">
                                     <div className="form-group">
-                                        <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit} className="w-50 mx-auto form-control bg-danger text-white btn btn-danger" name="submit"  />
+                                        <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit} className="w-50 mx-auto form-control text-white btn btn-primary border-0 " name="submit"  />
                                     </div>
                                 </div>
                              </div>
