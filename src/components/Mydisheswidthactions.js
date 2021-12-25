@@ -52,6 +52,8 @@ const Mydishes = () => {
                 setData(response.data.data) 
                 setIsLoadingdish(false)           
                
+            }).catch(err =>{
+                setIsLoadingdish('faild to fetch')
             })
 
         fetch('http://localhost:8000/api/category')
@@ -62,7 +64,10 @@ const Mydishes = () => {
             setCategories(varr) 
             setIsLoading(false)    
         }
-        )
+        ).catch(err =>{
+            console.log('faild to fetch');
+            setIsLoading('faild to fetch')    
+        })
     },[])
       
 
@@ -114,7 +119,7 @@ const Mydishes = () => {
             <div className="container mt-5 mydishes">
                 <div className="row my-5">
                     <div className="btns">
-                    {isloading && <p>loading...</p>}
+                    {isloading==true ? <p>loading...</p> : isloading} 
                     
                         {categories && !!categories.length && (
                          
@@ -148,7 +153,8 @@ const Mydishes = () => {
             </div> 
 
             <div className="row justify-content-center">
-            {isloadingdish && <p>loading...</p>}
+            {/* {isloadingdish && <p>loading...</p>} */}
+            {isloadingdish==true ? <p>loading...</p> : isloadingdish} 
                     {data.map((item)=>(
                 <div className="col-lg-3 col-md-7 p-2" key={item.id}>
                     <div className="single-blog mt-30 wow fadeIn  " data-wow-duration="1s" data-wow-delay="0.2s">

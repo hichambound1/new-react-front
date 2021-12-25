@@ -8,11 +8,13 @@ const Menu = () =>{
     const  [resto,setResto] = useState(''); 
     const [isloading, setIsLoading] = useState(true);
     useEffect( ()=>{
-        fetch(`http://localhost:8000/api/oneresto/4`)
+        fetch(`http://localhost:8000/api/oneresto/`+JSON.parse(localStorage.getItem('auth_user')).id)
         .then(response =>response.json())
         .then(json => {
-            setIsLoading(true)
+            setIsLoading(false)
             setResto(json)
+        }).catch(err=>{
+            setIsLoading('faild to fetch')
         })
     },[id]);
     

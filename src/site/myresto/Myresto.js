@@ -15,6 +15,8 @@ const Myresto = () =>{
             .then(json => {
                 setIsLoading(true)
                 setResto(json)
+            }).catch(err =>{
+                console.log('faild to fetch');
             })
         },[id])
     

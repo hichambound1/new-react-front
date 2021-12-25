@@ -49,6 +49,8 @@ const Mydishes = () => {
                 setData(response.data.data) 
                 setIsLoadingdish(false)           
                
+            }).catch(err=>{
+                setIsLoadingdish('faild to fetch')
             })
 
         fetch('http://localhost:8000/api/category')
@@ -58,8 +60,9 @@ const Mydishes = () => {
             
             setCategories(varr) 
             setIsLoading(false)    
-        }
-        )
+        }).catch(err=>{
+            setIsLoading('faild to fetch')
+        })
     },[])
       
 
@@ -81,8 +84,8 @@ const Mydishes = () => {
             <div className="container mt-5 mydishes">
                 <div className="row my-5">
                     <div className="btns">
-                    {isloading && <p>loading...</p>}
-                    
+                    {/* {isloading && <p>loading...</p>} */}
+                    {isloading==true ? <p>loading...</p> : isloading} 
                         {categories && !!categories.length && (
                          
                         <OwlCarousel className='owl-theme'  {...options}>
