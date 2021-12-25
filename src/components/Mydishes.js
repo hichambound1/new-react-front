@@ -4,8 +4,8 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from './Navbar';
-import Footer from './Footer';
+// import Navbar from './Navbar';
+// import Footer from './Footer';
 const Mydishes = () => {
     const options = {
         

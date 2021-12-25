@@ -3,11 +3,14 @@ import Navbar from "../../components/Navbar";
 import React, {  useState } from "react";
 import QRCode from "qrcode.react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Profile = () => {
     const [qrValue, setQrValue] = useState("");
     // setQrValue()
+    let navigate = useNavigate();
     
   const downloadQRCode = () => {
     // Generate download with use canvas and stream
@@ -45,14 +48,11 @@ const Profile = () => {
     fd.append('email',email)
     fd.append('phone',phone)
     if(logo){
-       
         fd.append('logo',logo)
     }
     if(cover){
-       
         fd.append('cover',cover)
     }
-   
     fd.append('_method','PUT')
     fd.append('address_en',addressen)
     fd.append('description_en',descriptionen)
@@ -68,6 +68,7 @@ const Profile = () => {
                     localStorage.removeItem('auth_user')
                     localStorage.setItem('auth_user', JSON.stringify(response.data))
                     setIsLoadingsubmit(false);
+                    navigate('/profile')
                    
         }).catch(error =>{
             

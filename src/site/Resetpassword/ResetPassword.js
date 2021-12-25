@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 
@@ -11,7 +12,7 @@ const ResetPassword = () => {
     const lastItem = thePath.substring(thePath.lastIndexOf('/resetpassword/') + 1)
     // remove a part from  it / result 
     const token = lastItem.replace('resetpassword/','');
-    
+    let navigate = useNavigate();
 
     const [password, setPassword] = useState('');
     const [password_confirmation, setPasswordConfirmation] = useState('');
@@ -38,7 +39,7 @@ const ResetPassword = () => {
                     console.log('good');
                     
                     setIsLoadingsubmit(false);
-                    // history.push('/')
+                    navigate('/login')
 
             }).catch(error =>{
                     console.log('bad');

@@ -1,25 +1,17 @@
 
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Navbar = () => {
-   
-    // const history = useHistory()
+    
+    let navigate= useNavigate();
     const handleLogout = (e) =>{
         e.preventDefault();
-        
-        
-            axios.post('http://localhost:8000/api/logout').then(response => {
-                                localStorage.removeItem('auth_token')
-                                localStorage.removeItem('auth_user')
-                                // history.push('/') 
-            //             }).catch(error =>{
-            //                 // console.log(error.response.data.message);
-            //                 if(error.response.status === 401){
-            //                 console.log('error 401')  
-            //                 }
-            //                 else{
-            //                     console.log('error')  
-            //                 }
+        axios.post('http://localhost:8000/api/logout').then(response => {
+            localStorage.removeItem('auth_token')
+            localStorage.removeItem('auth_user')
+            navigate('/')
+            }).catch(error =>{
+                console.log('error');  
             })
       
     }

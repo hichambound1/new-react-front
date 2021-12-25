@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import './Login.css';
 const Login = () => {
+    let navigate= useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
@@ -31,7 +32,8 @@ const Login = () => {
                             // localStorage.setItem('auth_user',response.data.user)
                             localStorage.setItem('auth_user', JSON.stringify(response.data.user))
                             setIsLoadingsubmit(false);
-                            // history.push('/')
+                            navigate('/')
+                 
 
                     }).catch(error =>{
                         setIsLoadingsubmit(false);

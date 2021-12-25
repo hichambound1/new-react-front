@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import axios from 'axios';
@@ -17,9 +17,7 @@ const Register = () => {
     const [errorpass, setErrorpass] = useState('');
     const [errorpassword_conf, setErrorpassword_conf] = useState('');
     const [error, setError] = useState('');
-
-
-// const history = useHistory()
+    const navigate = useNavigate()
         const [isloadingsubmit, setIsLoadingsubmit] = useState(false);
     const handleSubmit = (e) => {
         // e.presist();
@@ -48,7 +46,7 @@ const Register = () => {
                         localStorage.setItem('auth_token',response.data.token)
                         // localStorage.setItem('auth_user',response.data.user)
                         localStorage.setItem('auth_user', JSON.stringify(response.data.user))
-                        // history.push('/')
+                        navigate('/')
 
                 }).catch(error =>{
                     setIsLoadingsubmit(false);
