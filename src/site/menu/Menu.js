@@ -27,7 +27,7 @@ const Menu = () =>{
                                     <div className="w-100 p-0  img-header-left">
                                         <div className=" header-image  ">
                                      
-                                           {isloading && <img src={`http://localhost:8000/`+resto.cover}  width="100%" alt="" />}
+                                           <img src={`http://localhost:8000/`+resto.cover}  width="100%" alt="" />
                                         </div>
                                     </div>
                                 <div className=" p-0 m-0 position-relative">
@@ -35,7 +35,7 @@ const Menu = () =>{
                                     <div className="col-12 p-2 p-sm-4 p-md-5 d-flex content-header-right">
                                         <div className="my-auto mb-5">
                                             <div className="d-flex ">
-                                            {isloading && <img src={`http://localhost:8000/`+resto.logo} style={{ margin: '0 auto' }} width="305px" alt="" />}
+                                            <img src={`http://localhost:8000/`+resto.logo} style={{ margin: '0 auto' }} width="305px" alt="" />
                                             </div>
                                             <div className="d-flex">
                                                 <h1 className="mt-3 mt-md-5 mb-3 fs-0 text-dark mx-auto" > {resto.name_en} </h1>

@@ -32,8 +32,8 @@ const Adddish = (props) => {
         });
     }
     return ( 
-        <div>       
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <div >       
+            <button type="button" class="main-btn" data-toggle="modal" data-target="#exampleModal">
             <i className="fa fa-plus text-white" aria-hidden="true"></i> Add Photo
             </button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,7 +62,7 @@ const Adddish = (props) => {
                                             </div>
                                             </form>
                                     </div>
-                                
+
                                     </div>
                 </div>
                 </div>

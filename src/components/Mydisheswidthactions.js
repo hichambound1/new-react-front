@@ -34,13 +34,12 @@ const Mydishes = () => {
             },
             1000: {
                 items: 12,
-    
             }
         },
     };
-    
+
     const [data, setData] = useState([]);
-    const [dish, setDish] = useState(data);                     
+    const [dish, setDish] = useState(data);
     const [categories, setCategories] = useState([]);
   
     const [isloading, setIsLoading] = useState(true);
@@ -48,10 +47,9 @@ const Mydishes = () => {
     useEffect( ()=>{
         axios.defaults.withCredentials = true;
         axios.get('http://localhost:8000/api/mydishes/'+JSON.parse(localStorage.getItem('auth_user')).id)
-            .then(response => {   
-                setData(response.data.data) 
-                setIsLoadingdish(false)           
-               
+            .then(response => {
+                setData(response.data.data)
+                setIsLoadingdish(false)
             })
 
         fetch('http://localhost:8000/api/category')
@@ -61,7 +59,7 @@ const Mydishes = () => {
             
             setCategories(varr) 
             setIsLoading(false)    
-        }
+            }
         )
     },[])
       
@@ -101,7 +99,6 @@ const Mydishes = () => {
               swal("Poof! Your imaginary file has been deleted!", {
                 icon: "success",
               });
-              
 
             } else {
               swal("Your imaginary file is safe!");
@@ -112,7 +109,7 @@ const Mydishes = () => {
         <div className="">
             <Navbar/>
             <div className="container mt-5 mydishes">
-                <div className="row my-5">
+                <div className="row justify-content-between my-5">
                     <div className="btns">
                     {isloading && <p>loading...</p>}
                     
@@ -122,11 +119,13 @@ const Mydishes = () => {
                             <div onClick={ () => handleClick('all') } className='item'>
                                 <p>All</p>
                             </div>
+                            <div>
                             { categories.map((item)=>(
                                 <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
                                     <p>{item.name_en}</p>
                                 </div>
                             ))}
+                            </div>
                             
                         </OwlCarousel>
                         )
@@ -150,17 +149,20 @@ const Mydishes = () => {
             <div className="row justify-content-center">
             {isloadingdish && <p>loading...</p>}
                     {data.map((item)=>(
-                <div className="col-lg-3 col-md-7 p-2" key={item.id}>
-                    <div className="single-blog mt-30 wow fadeIn  " data-wow-duration="1s" data-wow-delay="0.2s">
+                <div className="col-lg-3 col-md-7 p-2 " key={item.id}>
+                    <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div className="blog-image ">
                             <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />
                         </div>
                         <div className="blog-content p-2">
                            
-                   
-                            <Link className="more text-capitalize " to={`/dish/${item.id}`} >{item.name_en} </Link>
-                            <p className="text">{item.description_en}</p>
-                            <p> {item.prix}<span>{item.currency}</span></p>
+                            <Link className="more text-capitalize font-weight-bold" to={`/dish/${item.id}`} >{item.name_en} </Link>
+                            <p className="text text_description_2 my-2 text-secondary text-capitalize">{item.description_en}</p>
+                            <div className='d-flex justify-content-between mt-2'>
+                                <p className="text text_description_2 my-0 text-capitalize">{item.category.name_en}</p>
+
+                                <h3 className='font-weight-light'> {item.prix}<span>{item.currency}</span></h3>
+                            </div>
                         </div>
                         <div className="actions p-2 d-flex justify-content-around">
 
