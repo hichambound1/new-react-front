@@ -1,6 +1,4 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import swal from 'sweetalert';
 import Navbar from '../../components/Navbar';
 import Addphoto from '../../components/Addphoto';
@@ -135,17 +133,16 @@ const Dish = () => {
                     {photos && !!photos.length && (
 
 
+                        <div className="">
 
-                        <OwlCarousel className='owl-theme'  {...options}>
-                          
                             { photos.map((item)=>(
                                 <div  key={item.id} className='item'>
                                    <img src={`http://localhost:8000/${item.photo}`} width="100px" height="200px" alt="" />
                                    <p  onClick={()=> handeldelete(item.id)} className="close">x</p>
                                 </div>
                             ))}
-                            
-                        </OwlCarousel>      
+                        </div>
+          
                         )
                      } 
                 </div>

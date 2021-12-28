@@ -1,6 +1,4 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -117,13 +115,14 @@ const Mydishes = () => {
         <div className="">
             <Navbar/>
             <div className="container mt-5 mydishes">
-                <div className="row my-5">
+                <div className="row my-5 justify-content-between">
                     <div className="btns">
                     {isloading==true ? <p>loading...</p> : isloading} 
                     
                         {categories && !!categories.length && (
                          
-                        <OwlCarousel className='owl-theme'  {...options}>
+                            <div className="">
+
                             <div onClick={ () => handleClick('all') } className='item'>
                                 <p>All</p>
                             </div>
@@ -132,8 +131,9 @@ const Mydishes = () => {
                                     <p>{item.name_en}</p>
                                 </div>
                             ))}
+                            </div>
                             
-                        </OwlCarousel>
+                      
                         )
                         }
                     </div>
@@ -156,25 +156,29 @@ const Mydishes = () => {
             {/* {isloadingdish && <p>loading...</p>} */}
             {isloadingdish==true ? <p>loading...</p> : isloadingdish} 
                     {data.map((item)=>(
-                <div className="col-lg-3 col-md-7 p-2" key={item.id}>
-                    <div className="single-blog mt-30 wow fadeIn  " data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div className="blog-image ">
-                            <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />
-                        </div>
-                        <div className="blog-content p-2">
-                           
-                   
-                            <Link className="more text-capitalize " to={`/dish/${item.id}`} >{item.name_en} </Link>
-                            <p className="text">{item.description_en}</p>
-                            <p> {item.prix}<span>{item.currency}</span></p>
-                        </div>
-                        <div className="actions p-2 d-flex justify-content-around">
+                <div className="col-lg-3 col-md-7 p-2 " key={item.id}>
+                <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div className="blog-image ">
+                        <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />
+                    </div>
+                    <div className="blog-content p-2">
+                       
+               
+                        <Link className="more text-capitalize font-weight-bold" to={`/dish/${item.id}`} >{item.name_en} </Link>
+                        <p className="text text_description_2 my-2 text-secondary text-capitalize">{item.description_en}</p>
+                        <div className='d-flex justify-content-between mt-2'>
+                            <p className="text text_description_2 my-0 text-capitalize">{item.category.name_en}</p>
 
-                            <div><Editdish  olddish={item} categories={categories}/></div>
-                            <div role="button" onClick={()=>handleDelete(item.id)}><i className="lni lni-trash  bg-danger text-white p-2 rounded-pill"></i></div>
+                            <h3 className='font-weight-light'> {item.prix}<span>{item.currency}</span></h3>
                         </div>
-                    </div> 
+                    </div>
+                    <div className="actions p-2 d-flex justify-content-around">
+
+                        <div><Editdish  olddish={item} categories={categories}/></div>
+                        <div role="button" onClick={()=>handleDelete(item.id)}><i className="lni lni-trash  bg-danger text-white p-2 rounded-pill"></i></div>
+                    </div>
                 </div> 
+            </div> 
                 ))}
                
             </div> 

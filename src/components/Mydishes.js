@@ -1,6 +1,3 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -82,13 +79,14 @@ const Mydishes = () => {
         <div className="">
            
             <div className="container mt-5 mydishes">
-                <div className="row my-5">
+                <div className="row  justify-content-between my-5">
                     <div className="btns">
                     {/* {isloading && <p>loading...</p>} */}
                     {isloading==true ? <p>loading...</p> : isloading} 
                         {categories && !!categories.length && (
                          
-                        <OwlCarousel className='owl-theme'  {...options}>
+                        <div>
+
                             <div onClick={ () => handleClick('all') } className='item'>
                                 <p>All</p>
                             </div>
@@ -98,7 +96,7 @@ const Mydishes = () => {
                                 </div>
                             ))}
                             
-                        </OwlCarousel>
+                                    </div>
                         )
                         }
                     </div>
@@ -118,20 +116,24 @@ const Mydishes = () => {
             <div className="row justify-content-center">
             {isloadingdish && <p>loading...</p>}
                     {data.map((item)=>(
-                <div className="col-lg-3 col-md-7" key={item.id}>
-                    <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div className="blog-image">
-                            <img src={`http://localhost:8000/`+item.photo} height='200px' alt="blog" />
-                        </div>
-                        <div className="blog-content p-2">
-                           
-                               
-                            <Link className="more text-capitalize " to={`/dish/${item.id}`}>{item.name_en} </Link>
-                            <p className="text">{item.description_en}</p>
-                            <p> {item.prix}<span>{item.currency}</span></p>
-                        </div>
+                    <div className="col-lg-3 col-md-7 p-2 " key={item.id}>
+                        <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div className="blog-image ">
+                                <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />
+                            </div>
+                            <div className="blog-content p-2">
+                            
+                    
+                                <Link className="more text-capitalize font-weight-bold" to={`/dish/${item.id}`} >{item.name_en} </Link>
+                                <p className="text text_description_2 my-2 text-secondary text-capitalize">{item.description_en}</p>
+                                <div className='d-flex justify-content-between mt-2'>
+                                    <p className="text text_description_2 my-0 text-capitalize">{item.category.name_en}</p>
+    
+                                    <h3 className='font-weight-light'> {item.prix}<span>{item.currency}</span></h3>
+                                </div>
+                            </div>
+                        </div> 
                     </div> 
-                </div> 
                 ))}
                
             </div> 

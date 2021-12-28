@@ -1269,9 +1269,28 @@ p {
 /*===========================
        09.BLOG  css 
 ===========================*/
-.single-blog .blog-image img {
+/* .single-blog .blog-image img {
   border-radius: 10px;
-  width: 100%; }
+  width: 100%; } */
+  
+
+
+  /* othmane ------------------------- */
+  .single-blog .blog-image {
+    border-radius: 10px;
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden;
+    
+  }
+    .single-blog .blog-image img {
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+    object-position: center; 
+    }
+  /* othmane ------------------------- */
+
 
 .single-blog .blog-content {
   padding-top: 25px; }
@@ -1285,19 +1304,34 @@ p {
     .single-blog .blog-content .meta li a {
       color: #6A6972; }
   .single-blog .blog-content .text {
-    font-size: 23px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 30px;
     color: #2E2E2E;
-    margin-top: 15px; }
+    /* margin-top: 15px;  */
+
+
+  }
+
+  .text_description_2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+  }
+
+
     @media (max-width: 767px) {
       .single-blog .blog-content .text {
-        font-size: 20px;
+        font-size: 14px;
         line-height: 30px; } }
   .single-blog .blog-content .more {
-    font-size: 16px;
+    font-size: 18px;
     color: #FE7E71;
-    margin-top: 30px; }
+    /* margin-top: 30px;  */
+  }
     .single-blog .blog-content .more i {
       margin-left: 5px; }
 
@@ -1593,6 +1627,13 @@ p {
 .owl-item.active{
   margin: 0;
   
+}
+.owl-carousel.owl-drag .owl-item {
+  width: auto !important;
+}
+
+.owl-carousel .owl-stage {
+  width: auto !important;
 }
 /* dish */
 .recipe, .pizza-box {
