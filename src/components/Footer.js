@@ -21,7 +21,7 @@ const Footer = () => {
 
 
     const handleSubmit = e => {
-        axios.post('http://localhost:8000/api/login', {
+        axios.post('http://localhost:8000/api/news', {
                         email: email,
                     }).then(response => {
                         console.log('good');

@@ -1,10 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 const Contact = () => {
    
-   
+    const [Loadinginfo,setIsLoadinginfo] = useState(true);
+    const [info,setInfo] = useState('');
+    useEffect( ()=>{
+        fetch(`http://localhost:8000/api/info/`)
+        .then(response =>response.json())
+        .then(json => {
+            setIsLoadinginfo(false)
+             setInfo(json) 
+
+        })
+        },[])
     return (
         <div className="contact">
             <Navbar/>
@@ -27,7 +38,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Address</Link>
                                         </h5>
-                                        <p className="text">+212 654523223</p>
+                                        <p className="text">{info.address}</p>
                                     </div>
                             </div>
                                     </div>
@@ -41,7 +52,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Phone: </Link>
                                         </h5>
-                                        <p className="text">+212 654523223</p>
+                                        <p className="text">{info.phone}</p>
                                     </div>
                                 
                             </div>
@@ -55,7 +66,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Email :</Link>
                                         </h5>
-                                        <p className="text">contact@qrresto.com</p>
+                                        <p className="text">{info.email}</p>
                                     </div>
                             </div>
                                     </div>
