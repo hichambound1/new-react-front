@@ -77,7 +77,10 @@ const Adddish = (props) => {
                     <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title text-danger" id="exampleModalLabel">Add Dish</h5>
-                        <button type="button" className="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                        {/* <button type="button" className="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button> */}
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div className="modal-body">
                             <form onSubmit={handleSubmit}   encType="multipart/form-data">

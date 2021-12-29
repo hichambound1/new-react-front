@@ -28,9 +28,12 @@ const Navbar = () => {
         );
     }else{
         authbnts= (
-            <ul className="navbar-nav ">
-                <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            // <ul className="navbar-nav ">
+            
+                <div className="nav-item dropdown dropdown_user">
+                        {/* <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false"> */}
+                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                         {JSON.parse(localStorage.getItem('auth_user')).name_en}
                         </Link>
                     <div className="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -40,8 +43,8 @@ const Navbar = () => {
                         <p className="dropdown-item text-dark text-center" style={{cursor:'pointer'} }onClick={handleLogout}>Logout</p>
                     
                     </div>
-                </li>
-            </ul>
+                </div>
+            // </ul>
         );
 
     }
@@ -92,9 +95,10 @@ const Navbar = () => {
                                         
                                         
                                     </ul>
-                                   
-                                   
                                     {authbnts}
+                                   
+                                   
+                                    
                                 </div> 
                                 
                                 

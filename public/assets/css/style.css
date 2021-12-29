@@ -1289,6 +1289,88 @@ p {
       object-fit: cover;
     object-position: center; 
     }
+<<<<<<< HEAD
+=======
+
+
+    .div_imgdetail_product {
+      height: 400px;
+      overflow: hidden;
+      
+    }
+      .div_imgdetail_product img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+        object-position: center; 
+      }
+
+
+    .gallery_scroll{
+      height: 200px; 
+      overflow: hidden;
+    }
+    .gallery_scroll img {
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+    object-position: center; 
+    }
+
+
+    .text-main{
+
+      color: #FE7E71;
+    }
+
+    .button-main{
+      height: 45px;
+      line-height: 45px;
+      background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+      background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+      background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
+      background-size: 200%;
+    }
+
+    .carousel .thumb {
+      height: 64px;
+  }
+
+  .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #000 !important;
+}
+  .carousel .control-next.control-arrow:before {
+    border-left: 8px solid #000 !important;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 0 20px !important;
+}
+
+.sticky .dropdown_user a {
+  color: #2E2E2E; }
+
+.dropdown_user a{
+  display: block;
+    padding: 4px 0 !important;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+@media only screen and  (max-width: 991px){
+    .dropdown_user a {
+      display: block;
+      padding: 4px 0;
+      color: #2E2E2E;
+    }
+}
+
+
+>>>>>>> origin/rhazlani
   /* othmane ------------------------- */
 
 
@@ -1322,6 +1404,11 @@ p {
     -webkit-box-orient: vertical;
   }
 
+<<<<<<< HEAD
+=======
+  
+
+>>>>>>> origin/rhazlani
 
     @media (max-width: 767px) {
       .single-blog .blog-content .text {
@@ -1604,6 +1691,11 @@ p {
   padding-top: 100px;
 }
 
+@media only screen and (max-width: 575px) {
+  .dishpage{
+    padding-top: 35px;
+  }
+}
 
 .mydishes{
   padding-top: 150px;

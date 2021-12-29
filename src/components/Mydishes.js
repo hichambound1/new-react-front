@@ -98,7 +98,7 @@ const Mydishes = () => {
                             
                                     </div>
                         )
-                        }
+                        } 
                     </div>
                 </div>
                   

@@ -43,9 +43,9 @@ const Home = () => {
                     <div className="section-title text-center pb-40">
                         <div className="line m-auto"></div>
                         <h3 className="title">Clean and simple design, <span> Comes with everything you need to get started!</span></h3>
-                    </div> 
+                    </div>
                 </div>
-            </div> 
+            </div>
             <div className="row justify-content-center">
                 <div className="col-lg-4 col-md-7 col-sm-8">
                     <div className="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -127,6 +127,9 @@ const Home = () => {
             </div>   
         </div> 
     </div>
+
+
+    
     
   
 {/*     
@@ -515,9 +518,7 @@ const Home = () => {
         </div> 
     </section> */}
             <Footer/>
-        
-      
-        
+
         </div>
     );
 }

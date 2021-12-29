@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -113,7 +112,6 @@ const Mydishes = () => {
               swal("Poof! Your imaginary file has been deleted!", {
                 icon: "success",
               });
-              
 
             } else {
               swal("Your imaginary file is safe!");
@@ -140,7 +138,26 @@ const Mydishes = () => {
                                     ))}
                             </Carousel>                         
                         )
-                        }
+                        } 
+
+                            {/* <div className="carouselContainer">
+                                <div className="carouselOfImages">
+                                        <div className="carouselImage">Item 1</div>
+                                        <div className="carouselImage">Item 2</div>
+                                        <div className="carouselImage">Item 3</div>
+                                        <div className="carouselImage">Item 4</div>
+                                        <div className="carouselImage">Item 5</div>
+                                        <div className="carouselImage">Item 6</div>
+                                        <div className="carouselImage">Item 7</div>
+                                        <div className="carouselImage">Item 8</div>
+                                        <div className="carouselImage">Item 9</div>
+                                        <div className="carouselImage">Item 10</div>
+                                </div>
+                            </div> */}
+
+
+            
+
                     </div>
                     <Adddish categories={categories}/>
                 </div>

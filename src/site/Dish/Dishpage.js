@@ -1,14 +1,16 @@
 
-import swal from 'sweetalert';
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';  
+// import swal from 'sweetalert';
 import Navbar from '../../components/Navbar';
 import Addphoto from '../../components/Addphoto';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const Dish = () => {
-    const { id } = useParams();
+    let { id } = useParams();
     // const history = useHistory();
   const [dish, setDish] = useState([]);
   const [photos, setPhotos] = useState([]);
@@ -34,69 +36,42 @@ const Dish = () => {
       },[id])
      
       
-    // const options = {
-        
-    //     responsiveClass: true,
-    //     nav: true,
-    //     dots: false,
-    //     autoplay: true,
-    //     // navText: ["Prev", "Next"],
-    //     smartSpeed: 100,
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //         },
-    //         400: {
-    //             items: 2,
-    //         },
-    //         600: {
-    //             items: 3,
-    //         },
-    //         700: {
-    //             items: 3,
-    //         },
-    //         1000: {
-    //             items:4,
-    
-    //         }
-    //     },
-    // };
-
+  
    
     // delete dish
-    const handeldelete = (id) =>   {
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
+    // const handeldelete = (id) =>   {
+    //     swal({
+    //         title: "Are you sure?",
+    //         text: "Once deleted, you will not be able to recover this imaginary file!",
+    //         icon: "warning",
+    //         buttons: true,
+    //         dangerMode: true,
+    //       })
+    //       .then((willDelete) => {
+    //         if (willDelete) {
 
-                axios.defaults.withCredentials = true;
-                axios.get('http://localhost:8000/sanctum/csrf-cookie')
-                .then(response => {
-                axios.delete('http://localhost:8000/api/delete/gallery/'+id)
-                .then(response => {               
-                    // history.go(0)    
-                    setgallery('photo deleted')
-                }).catch( err =>{
+    //             axios.defaults.withCredentials = true;
+    //             axios.get('http://localhost:8000/sanctum/csrf-cookie')
+    //             .then(response => {
+    //             axios.delete('http://localhost:8000/api/delete/gallery/'+id)
+    //             .then(response => {               
+    //                 // history.go(0)    
+    //                 setgallery('photo deleted')
+    //             }).catch( err =>{
                            
-                    setgallery('somethings went wrong')
-                })
-              swal("Poof! Your imaginary file has been deleted!", {
-                icon: "success",
-              });
-              });
+    //                 setgallery('somethings went wrong')
+    //             })
+    //           swal("Poof! Your imaginary file has been deleted!", {
+    //             icon: "success",
+    //           });
+    //           });
               
 
-            } else {
-              swal("Your imaginary file is safe!");
-            }
-          });
-    }
+    //         } else {
+    //           swal("Your imaginary file is safe!");
+    //         }
+    //       });
+    // }
 
     return ( 
         <div>
@@ -132,17 +107,12 @@ const Dish = () => {
                     {gallery && <div className="alert alert-primary" role="alert"> {gallery}</div>}
                     {photos && !!photos.length && (
 
-
-                        <div className="">
-
-                            { photos.map((item)=>(
-                                <div  key={item.id} className='item'>
-                                   <img src={`http://localhost:8000/${item.photo}`} width="100px" height="200px" alt="" />
-                                   <p  onClick={()=> handeldelete(item.id)} className="close">x</p>
-                                </div>
+                    <Carousel autoPlay>
+                        { photos.map((item)=>(
+                            <img key={item.photo} src={`http://localhost:8000/${item.photo}`} alt="" />
                             ))}
-                        </div>
-          
+                    </Carousel>
+                         
                         )
                      } 
                 </div>
