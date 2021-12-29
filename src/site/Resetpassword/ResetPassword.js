@@ -3,15 +3,17 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
+import { useParams } from 'react-router-dom';
 
 
 const ResetPassword = () => {
+    const { token } = useParams();
     // get the url 
-    const thePath= window.location.href;
+    // const thePath= window.location.href;
     // get the last part of url
-    const lastItem = thePath.substring(thePath.lastIndexOf('/resetpassword/') + 1)
+    // const lastItem = thePath.substring(thePath.lastIndexOf('/resetpassword/') + 1)
     // remove a part from  it / result 
-    const token = lastItem.replace('resetpassword/','');
+    // const token = lastItem.replace('resetpassword/','');
     let navigate = useNavigate();
 
     const [password, setPassword] = useState('');
