@@ -53,7 +53,7 @@ const Home = () => {
                             <img className="shape" src="assets/images/services-shape.svg" alt="shape"/>
                             <img className="shape-1" src="assets/images/services-shape-1.svg" alt="shape"/>
                            
-                            <i class="lni lni-headphone-alt"></i>
+                            <i className="lni lni-headphone-alt"></i>
                         </div>
                         <div className="services-content mt-30">
                             <h4 className="services-title"><Link to="#">24/7 SUPPORT</Link></h4>

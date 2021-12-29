@@ -8,11 +8,11 @@ const About = () => {
     return (
         <div className="about">
             <Navbar />
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-5">
-                    <div class="section-title text-center pb-30">
-                        <div class="line m-auto"></div>
-                            <h3 class="title"><span>What </span>We do ?</h3>
+            <div className="row justify-content-center mt-5">
+                <div className="col-lg-5">
+                    <div className="section-title text-center pb-30">
+                        <div className="line m-auto"></div>
+                            <h3 className="title"><span>What </span>We do ?</h3>
                         </div>
                     </div>
             </div>

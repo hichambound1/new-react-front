@@ -33,11 +33,11 @@ const Adddish = (props) => {
     }
     return ( 
         <div>       
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             <i className="fa fa-plus text-white" aria-hidden="true"></i> Add Photo
             </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
                     <div className="modal-content">
                                     <div className="modal-header">
                                         <h5 className="modal-title text-danger" id="exampleModalLabel">Add Photo</h5>
