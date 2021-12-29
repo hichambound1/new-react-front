@@ -1,37 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import Navbar from './Navbar';
+
+import Carousel from 'react-elastic-carousel';
+// import Adddish from './Adddish';
 // import Footer from './Footer';
 const Mydishes = () => {
-    // const options = {
-        
-    //     responsiveClass: true,
-    //     nav: true,
-    //     dots: false,
-    //     autoplay: true,
-    //     margin: 12,
-    //     // navText: ["Prev", "Next"],
-    //     smartSpeed: 100,
-    //     responsive: {
-    //         0: {
-    //             items: 3,
-    //         },
-    //         400: {
-    //             items: 4,
-    //         },
-    //         600: {
-    //             items: 4,
-    //         },
-    //         700: {
-    //             items: 6,
-    //         },
-    //         1000: {
-    //             items: 12,
-    
-    //         }
-    //     },
-    // };
     
     const [data, setData] = useState([]);
     const [dish, setDish] = useState(data);                     
@@ -63,7 +37,15 @@ const Mydishes = () => {
     },[])
       
 
- 
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },
+        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+        { width: 1450, itemsToShow: 5 },
+        { width: 1750, itemsToShow: 6 },
+      ]
+    
 
     const handleClick = (name_en) =>   {
         if(name_en === 'all'){
@@ -79,27 +61,26 @@ const Mydishes = () => {
         <div className="">
            
             <div className="container mt-5 mydishes">
-                <div className="row  justify-content-between my-5">
-                    <div className="btns">
-                    {/* {isloading && <p>loading...</p>} */}
+            <div className="row my-5 justify-content-between">
+                    <div className="col-12">
                     {isloading===true ? <p>loading...</p> : isloading} 
-                        {categories && !!categories.length && (
-                         
-                        <div>
-
-                            <div onClick={ () => handleClick('all') } className='item'>
-                                <p>All</p>
-                            </div>
+                    
+                        {categories && !!categories.length && (                           
+                            <Carousel breakPoints={breakPoints} itemsToShow={6} enableAutoPlay autoPlaySpeed={2500}>
+                                        <div onClick={ () => handleClick('all') } className='item'>
+                                            <p>All</p>
+                                        </div>
                             { categories.map((item)=>(
-                                <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
-                                    <p>{item.name_en}</p>
-                                </div>
-                            ))}
-                            
-                                    </div>
+                                        <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
+                                            <p>{item.name_en}</p>
+                                        </div>
+                                    ))}
+                            </Carousel>                         
                         )
-                        } 
+                        }     
+
                     </div>
+                    {/* <Adddish categories={categories}/> */}
                 </div>
                   
     <section id="blog" className="blog-area pt-120">

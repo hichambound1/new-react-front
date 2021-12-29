@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const Editdish = (props) => {
-  
+    
     const categories = props.categories;
     const olddish = props.olddish;
     // console.log(olddish);
@@ -51,6 +51,7 @@ const Editdish = (props) => {
             ).then(response => {
                         console.log('good')
                         setIsLoadingsubmit(false);
+                        window.location.reload()
             }).catch(error =>{
                 
                 setIsLoadingsubmit(false);

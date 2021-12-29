@@ -45,6 +45,7 @@ const Adddish = (props) => {
             ).then(response => {
                         console.log('good')
                         setIsLoadingsubmit(false);
+                        window.location.reload()
             }).catch(error =>{
                 
                 setIsLoadingsubmit(false);
