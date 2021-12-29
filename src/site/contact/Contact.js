@@ -16,6 +16,12 @@ const Contact = () => {
 
         })
         },[])
+
+
+        const handleSubmit = e => {
+            e.preventDefault();
+            alert('ggg');
+        }
     return (
         <div className="contact">
             <Navbar/>
@@ -92,7 +98,7 @@ const Contact = () => {
                                     <div id="form-message-success" className="mb-4">
                                     Your message was sent, thank you!
                                     </div>
-                                            <form  id="contactForm" name="contactForm" className="contactForm">
+                                            <form  onSubmit={handleSubmit} id="contactForm" name="contactForm" className="contactForm">
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
 
 const Footer = () => {
     const [email,setEmail] = useState();
@@ -21,12 +22,19 @@ const Footer = () => {
 
 
     const handleSubmit = e => {
+        e.preventDefault();
         axios.post('http://localhost:8000/api/news', {
                         email: email,
                     }).then(response => {
                         console.log('good');
+                        swal("Thank You for subscribing’ !", {
+                            icon: "success",
+                          });
                     }).catch(error =>{
-                        console.log('bad');
+                        swal(`Something went wrong  : ${error.response.data.errors.email}`, {
+                            icon: "warning",
+                          });
+                          
                         
                     })
     }
@@ -46,7 +54,7 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="subscribe-form mt-50">
-                            <form >
+                            <form onSubmit={handleSubmit} >
                                 <input type="email"  value={email}  onChange={e => setEmail(e.target.value)}  placeholder="Enter eamil" />
                                 <button className="main-btn">Subscribe</button>
                             </form>
