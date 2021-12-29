@@ -5,7 +5,7 @@ import axios from 'axios';
 // import Footer from './Footer';
 const Mydishes = () => {
     // const options = {
-        
+
     //     responsiveClass: true,
     //     nav: true,
     //     dots: false,
@@ -28,7 +28,7 @@ const Mydishes = () => {
     //         },
     //         1000: {
     //             items: 12,
-    
+
     //         }
     //     },
     // };
@@ -84,7 +84,7 @@ const Mydishes = () => {
                     {/* {isloading && <p>loading...</p>} */}
                     {isloading===true ? <p>loading...</p> : isloading} 
                         {categories && !!categories.length && (
-                         
+
                         <div>
 
                             <div onClick={ () => handleClick('all') } className='item'>

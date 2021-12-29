@@ -65,59 +65,101 @@ const Dish = () => {
     //             icon: "success",
     //           });
     //           });
-              
-
+  
     //         } else {
     //           swal("Your imaginary file is safe!");
     //         }
     //       });
     // }
 
-    return ( 
-        <div>
-         
-                <Navbar />
-           
-            <div className="container mt-5 dishpage">
-        {isloadingdish && 'loading...'}
-                <div className="row">
-                   <div className="col-md-6 p-3">
-                        <img src={`http://localhost:8000/`+dish.photo} width="auto" height="250px"  alt="" />
-                   </div>
-                   <div className="col-md-6 p-3">
-                        <h3>{dish.name_en}</h3>
-                        <strong>Description :</strong>
-                        <p className="text-secondary">{dish.description_en}</p>
-                        <strong>Ingredients :</strong>
-                        <p className="text-secondary">{dish.ingredients_en}</p>
-                        <strong>Price :</strong>
-                        <p className="text-secondary">{dish.prix} {dish.currency} </p>
-                   </div>
-                </div>
-            
-                <div className="row">
-                    <h3 className="text-center text-uppercase text-danger">Gallery</h3>
-                    
-                    { JSON.parse(localStorage.getItem('auth_user')).id === dish.user_id &&
-                    
-                    <Addphoto dish={dish.id} />
-                 
-                    }
-                    {isloadingphotos && 'loading...'}
-                    {gallery && <div className="alert alert-primary" role="alert"> {gallery}</div>}
-                    {photos && !!photos.length && (
+    return (
+      <div>
 
-                    <Carousel autoPlay>
-                        { photos.map((item)=>(
-                            <img key={item.photo} src={`http://localhost:8000/${item.photo}`} alt="" />
-                            ))}
-                    </Carousel>
-                         
-                        )
-                     } 
-                </div>
+      <Navbar />
+
+  <div className="container mt-5 dishpage">
+
+{isloadingdish && 'loading...'}
+      <div className="row">
+         <div className="col-md-6 p-0 p-md-3 ">
+          <div className='div_imgdetail_product'>
+            {photos && !!photos.length &&  (
+                <Carousel autoPlay>
+                  <div className='gallery_scroll' style={{height: '320px'}}>
+                    <img src={`http://localhost:8000/`+dish.photo} width="auto"   alt="" />
+                        </div>
+                    { photos.map((item)=>(
+                        <div  key={item.id} className='gallery_scroll position-relative' style={{height: '320px'}}>
+                          <div role="button" className='position-absolute top-0 end-0 m-3' ><i class=" lni lni-trash  bg-danger text-white p-2 rounded-pill"></i></div>
+                          <img src={`http://localhost:8000/${item.photo}`} alt="" />
+                        </div>
+                      ))}
+                </Carousel>
+              )
+            }
+          </div>
+            <div className="col-lg-12 px-3 my-4 my-lg-0 d-flex justify-content-start">
+                  { JSON.parse(localStorage.getItem('auth_user')).id === dish.user_id &&
+
+                      <Addphoto dish={dish.id} />
+
+                  }
             </div>
-        </div>
+         </div>
+         <div className="col-md-6 p-3">
+              <div className='d-flex justify-content-between mb-5'>
+                <h3 className='font-weight-light'>{dish.name_en}</h3>
+                <h3 className='font-weight-normal text-main'>{dish.prix} {dish.currency}</h3>
+              </div>
+              <strong>Description :</strong>
+              <p className="text-secondary mb-4 mx-3">{dish.description_en}</p>
+              <strong>Ingredients :</strong>
+              <p className="text-secondary mx-3">{dish.ingredients_en}</p>
+              
+         </div>
+      </div>
+  
+      <div className="row">
+          {isloadingphotos && 'loading...'}
+          {gallery && <div className="alert alert-primary" role="alert"> {gallery}</div>}
+          {/* {photos && !!photos.length && (
+
+              <section id="testimonial" className="testimonial-area pt-5">
+                  <div className="">
+                      <div className="row ">
+                          <div className="col-lg-12 ">
+                              <div className="d-flex justify-content-between">
+                                <div className="section-title text-center pb-40">
+                                    <div className="line m-auto"></div>
+                                    <h3 className="title"><span> See more</span></h3>
+                                </div> 
+                                { JSON.parse(localStorage.getItem('auth_user')).id === dish.user_id &&
+            
+                                    <Addphoto dish={dish.id} />
+
+                                }
+                              </div>
+                          </div>
+                      </div> 
+                      <div  className="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                          { photos.map((item)=>(
+                              <div className="col-lg-4 gallery_scroll" >
+                                <img src={`http://localhost:8000/${item.photo}`} alt="" />
+                              </div>
+                            ))}
+                          
+                      </div> 
+
+                  </div>
+              </section>
+
+              )
+           } */}
+
+           
+      </div>
+  </div>
+</div>
      );
 }
  

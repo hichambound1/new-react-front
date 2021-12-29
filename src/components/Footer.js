@@ -17,9 +17,9 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-6">
                         <div className="subscribe-form mt-50">
-                            <form action="/">
+                            <form action="www.google.com">
                                 <input type="text" placeholder="Enter eamil" />
-                                <button className="main-btn">Subscribe</button>
+                                <button type="button" className="main-btn">Subscribe</button>
                             </form>
                         </div>
                     </div>
