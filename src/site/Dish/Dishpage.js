@@ -34,33 +34,33 @@ const Dish = () => {
       },[id])
      
       
-    const options = {
+    // const options = {
         
-        responsiveClass: true,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        // navText: ["Prev", "Next"],
-        smartSpeed: 100,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            400: {
-                items: 2,
-            },
-            600: {
-                items: 3,
-            },
-            700: {
-                items: 3,
-            },
-            1000: {
-                items:4,
+    //     responsiveClass: true,
+    //     nav: true,
+    //     dots: false,
+    //     autoplay: true,
+    //     // navText: ["Prev", "Next"],
+    //     smartSpeed: 100,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //         },
+    //         400: {
+    //             items: 2,
+    //         },
+    //         600: {
+    //             items: 3,
+    //         },
+    //         700: {
+    //             items: 3,
+    //         },
+    //         1000: {
+    //             items:4,
     
-            }
-        },
-    };
+    //         }
+    //     },
+    // };
 
    
     // delete dish

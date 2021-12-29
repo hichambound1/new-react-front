@@ -28,7 +28,7 @@ const Menu = () =>{
                             <div className="col-12">
                                     <div className="w-100 p-0  img-header-left">
                                         <div className=" header-image  ">
-                                     
+                                     {isloading ?? 'loading...'}
                                      <img src={`http://localhost:8000/`+resto.cover}  width="100%" alt="" />
                                         </div>
                                     </div>

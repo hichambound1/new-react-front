@@ -77,11 +77,14 @@ const ResetPassword = () => {
                                                
                                                 <div className="form-group ">
                                                     <label htmlFor="password" >Password</label>                                                   
-                                                        <input id="password" required value={password}  onChange={e => setPassword(e.target.value)} type="password" className="form-control " name="password" required="" autoComplete="new-password"/>                                                
+                                                        <input id="password" required value={password}  onChange={e => setPassword(e.target.value)} 
+                                                        type="password" className="form-control " name="password"  />                                                
                                                 </div>
                                                 <div className="form-group ">
                                                     <label htmlFor="password-confirm" >Confirm Password</label>
-                                                        <input id="password-confirm"  required value={password_confirmation}  onChange={e => setPasswordConfirmation(e.target.value)} type="password" className="form-control" name="password_confirmation" required="" autoComplete="new-password" />                            
+                                                        <input id="password-confirm"  required value={password_confirmation}  
+                                                        onChange={e => setPasswordConfirmation(e.target.value)} type="password" 
+                                                        className="form-control" name="password_confirmation"   />                            
                                                 </div>
                                                 <div className="form-group">
                                                     <button type="submit" disabled={isloadingsubmit} className="form-control btn btn-primary rounded submit px-3">{isloadingsubmit ? 'loading...' : 'Send' }</button>

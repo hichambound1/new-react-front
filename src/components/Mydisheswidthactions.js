@@ -7,38 +7,39 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Editdish from './Editdish';
 import Adddish from './Adddish';
+import Carousel from 'react-elastic-carousel';
+
 const Mydishes = () => {
-    const options = {
+    // const options = {
         
-        responsiveClass: true,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        margin: 12,
-        // navText: ["Prev", "Next"],
-        smartSpeed: 100,
-        responsive: {
-            0: {
-                items: 3,
-            },
-            400: {
-                items: 4,
-            },
-            600: {
-                items: 4,
-            },
-            700: {
-                items: 6,
-            },
-            1000: {
-                items: 12,
+    //     responsiveClass: true,
+    //     nav: true,
+    //     dots: false,
+    //     autoplay: true,
+    //     margin: 12,
+    //     // navText: ["Prev", "Next"],
+    //     smartSpeed: 100,
+    //     responsive: {
+    //         0: {
+    //             items: 3,
+    //         },
+    //         400: {
+    //             items: 4,
+    //         },
+    //         600: {
+    //             items: 4,
+    //         },
+    //         700: {
+    //             items: 6,
+    //         },
+    //         1000: {
+    //             items: 12,
     
-            }
-        },
-    };
-    
-    const [data, setData] = useState([]);
-    const [dish, setDish] = useState(data);                     
+    //         }
+    //     },
+    // };
+   
+    const [data, setData] = useState([]);                    
     const [categories, setCategories] = useState([]);
   
     const [isloading, setIsLoading] = useState(true);
@@ -67,18 +68,26 @@ const Mydishes = () => {
             setIsLoading('faild to fetch')    
         })
     },[])
-      
-
- 
-
+    
+    
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },
+        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+        { width: 1450, itemsToShow: 5 },
+        { width: 1750, itemsToShow: 6 },
+      ]
+    
     const handleClick = (name_en) =>   {
+        
         if(name_en === 'all'){
-            setDish(data);
+            alert('all')
+            setData(data);
         }else{
-            
-            setDish(data);
-            const newdata = dish.filter(item=>item.category===name_en);
-            setDish(newdata);
+            setData(data);
+            const newdata = data.filter(item=>item.category === name_en);      
+            setData(newdata);
         }
     }
     // delete dish
@@ -116,24 +125,20 @@ const Mydishes = () => {
             <Navbar/>
             <div className="container mt-5 mydishes">
                 <div className="row my-5 justify-content-between">
-                    <div className="btns">
-                    {isloading==true ? <p>loading...</p> : isloading} 
+                    <div className="col-12">
+                    {isloading===true ? <p>loading...</p> : isloading} 
                     
-                        {categories && !!categories.length && (
-                         
-                            <div className="">
-
-                            <div onClick={ () => handleClick('all') } className='item'>
-                                <p>All</p>
-                            </div>
+                        {categories && !!categories.length && (                           
+                            <Carousel breakPoints={breakPoints} itemsToShow={6} enableAutoPlay autoPlaySpeed={2500}>
+                                        <div onClick={ () => handleClick('all') } className='item'>
+                                            <p>All</p>
+                                        </div>
                             { categories.map((item)=>(
-                                <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
-                                    <p>{item.name_en}</p>
-                                </div>
-                            ))}
-                            </div>
-                            
-                      
+                                        <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
+                                            <p>{item.name_en}</p>
+                                        </div>
+                                    ))}
+                            </Carousel>                         
                         )
                         }
                     </div>
@@ -154,7 +159,7 @@ const Mydishes = () => {
 
             <div className="row justify-content-center">
             {/* {isloadingdish && <p>loading...</p>} */}
-            {isloadingdish==true ? <p>loading...</p> : isloadingdish} 
+            {isloadingdish===true ? <p>loading...</p> : isloadingdish} 
                     {data.map((item)=>(
                 <div className="col-lg-3 col-md-7 p-2 " key={item.id}>
                 <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">

@@ -4,34 +4,34 @@ import axios from 'axios';
 // import Navbar from './Navbar';
 // import Footer from './Footer';
 const Mydishes = () => {
-    const options = {
+    // const options = {
         
-        responsiveClass: true,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        margin: 12,
-        // navText: ["Prev", "Next"],
-        smartSpeed: 100,
-        responsive: {
-            0: {
-                items: 3,
-            },
-            400: {
-                items: 4,
-            },
-            600: {
-                items: 4,
-            },
-            700: {
-                items: 6,
-            },
-            1000: {
-                items: 12,
+    //     responsiveClass: true,
+    //     nav: true,
+    //     dots: false,
+    //     autoplay: true,
+    //     margin: 12,
+    //     // navText: ["Prev", "Next"],
+    //     smartSpeed: 100,
+    //     responsive: {
+    //         0: {
+    //             items: 3,
+    //         },
+    //         400: {
+    //             items: 4,
+    //         },
+    //         600: {
+    //             items: 4,
+    //         },
+    //         700: {
+    //             items: 6,
+    //         },
+    //         1000: {
+    //             items: 12,
     
-            }
-        },
-    };
+    //         }
+    //     },
+    // };
     
     const [data, setData] = useState([]);
     const [dish, setDish] = useState(data);                     
@@ -82,7 +82,7 @@ const Mydishes = () => {
                 <div className="row  justify-content-between my-5">
                     <div className="btns">
                     {/* {isloading && <p>loading...</p>} */}
-                    {isloading==true ? <p>loading...</p> : isloading} 
+                    {isloading===true ? <p>loading...</p> : isloading} 
                         {categories && !!categories.length && (
                          
                         <div>

@@ -1,24 +1,23 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 import Mydisheswidthactions from '../../components/Mydisheswidthactions';
 
 const Myresto = () =>{
 
-    const { id } = useParams(); 
+    // const { id } = useParams(); 
 
-    const  [resto,setResto] = useState(''); 
-    const [isloading, setIsLoading] = useState(true);
-    useEffect( ()=>{
+    // const  [resto,setResto] = useState(''); 
+    // useEffect( ()=>{
         
-            fetch(`http://localhost:8000/api/oneresto/`+id)
-            .then(response =>response.json())
-            .then(json => {
-                setIsLoading(true)
-                setResto(json)
-            }).catch(err =>{
-                console.log('faild to fetch');
-            })
-        },[id])
+    //         fetch(`http://localhost:8000/api/oneresto/`+id)
+    //         .then(response =>response.json())
+    //         .then(json => {
+    //             // setResto(json)
+    //             console.log('good');
+    //         }).catch(err =>{
+    //             console.log('faild to fetch');
+    //         })
+    //     },[id])
     
         return(
         <div>
