@@ -45,7 +45,7 @@ const Dish = () => {
 
    
     // delete dish
-    const handeldelete = (id) =>   {
+    const handleDelete = (id) =>   {
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -98,9 +98,11 @@ const Dish = () => {
                                     <img src={`http://localhost:8000/`+dish.photo} width="auto"   alt="" />
                                   </div>
                               { photos.map((item)=>(
-                                  <div  key={item.id} className='gallery_scroll' style={{height: '320px'}}>
+                                  <div  key={item.id} className='gallery_scroll position-relative' style={{height: '320px'}}>
                                     <img src={`http://localhost:8000/${item.photo}`} alt="" />
-                                    <p  onClick={()=> handeldelete(item.id)} className="close" role={'button'}>delete</p>
+                                    <div role="button" className='position-absolute top-0 end-0 m-3' onClick={()=>handleDelete(item.id)}>
+                                      <i class=" lni lni-trash  bg-danger text-white p-2 rounded-pill"></i>
+                                    </div>
                                   </div>
                                 ))}
                           </Carousel>
