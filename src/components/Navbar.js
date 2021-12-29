@@ -36,9 +36,12 @@ const Navbar = () => {
         );
     }else{
         authbnts= (
-            <ul className="navbar-nav ">
-                <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            // <ul className="navbar-nav ">
+            
+                <div className="nav-item dropdown dropdown_user">
+                        {/* <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false"> */}
+                        <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                         {JSON.parse(localStorage.getItem('auth_user')).name_en}
                         </Link>
                     <div className="dropdown-menu " aria-labelledby="navbarDropdown">
@@ -48,8 +51,8 @@ const Navbar = () => {
                         <p className="dropdown-item text-dark text-center" style={{cursor:'pointer'} }onClick={handleLogout}>Logout</p>
                     
                     </div>
-                </li>
-            </ul>
+                </div>
+            // </ul>
         );
 
     }
@@ -64,11 +67,9 @@ const Navbar = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <nav className="navbar navbar-expand-lg">
-                                <Link className="navbar-brand" to="index.html">
-                                <Link to="/">
-                                            
+                                <Link className="navbar-brand" to="/">
+
                                     <img src="assets/images/logo.svg" alt="Logo" />
-                                        </Link>
                                 </Link>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="toggler-icon"></span>
@@ -100,9 +101,10 @@ const Navbar = () => {
                                         
                                         
                                     </ul>
-                                   
-                                   
                                     {authbnts}
+                                   
+                                   
+                                    
                                 </div> 
                                 
                                 

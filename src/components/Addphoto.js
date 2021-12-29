@@ -33,15 +33,18 @@ const Adddish = (props) => {
     }
     return ( 
         <div >       
-            <button type="button" class="main-btn" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" className="main-btn" data-toggle="modal" data-target="#exampleModal">
             <i className="fa fa-plus text-white" aria-hidden="true"></i> Add Photo
             </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
                     <div className="modal-content">
                                     <div className="modal-header">
                                         <h5 className="modal-title text-danger" id="exampleModalLabel">Add Photo</h5>
-                                        <button type="button" className="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        {/* <button type="button" className="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button> */}
+                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
                                     <div className="modal-body">
                                             <form onSubmit={handleSubmit}   encType="multipart/form-data">
@@ -50,7 +53,7 @@ const Adddish = (props) => {
                                                 <div className="col-md-6 ">
                                                     <div className="form-group">
                                                         <label htmlFor="photo">Photo</label>
-                                                        <input name="photo"   onChange={e => setPhotoupload(e.target.files[0])}  type="file" className="form-control" />
+                                                        <input name="photo"   onChange={e => setPhotoupload(e.target.files[0])}  type="file" className="dropify" />
                                                         <span className="text-danger">{errorphoto}</span>
                                                     </div>
                                                 </div>

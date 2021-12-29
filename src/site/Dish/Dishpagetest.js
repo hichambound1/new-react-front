@@ -100,7 +100,7 @@ const Dish = () => {
                         )
                       }
                     </div>
-                      <div class="col-lg-12 px-0 mx-3 my-4 my-lg-0 d-flex justify-content-start">
+                      <div className="col-lg-12 px-3 my-4 my-lg-0 d-flex justify-content-start">
                             { JSON.parse(localStorage.getItem('auth_user')).id === dish.user_id &&
 
                                 <Addphoto dish={dish.id} />
@@ -126,14 +126,14 @@ const Dish = () => {
                     {gallery && <div className="alert alert-primary" role="alert"> {gallery}</div>}
                     {/* {photos && !!photos.length && (
 
-                        <section id="testimonial" class="testimonial-area pt-5">
-                            <div class="">
-                                <div class="row ">
-                                    <div class="col-lg-12 ">
-                                        <div class="d-flex justify-content-between">
-                                          <div class="section-title text-center pb-40">
-                                              <div class="line m-auto"></div>
-                                              <h3 class="title"><span> See more</span></h3>
+                        <section id="testimonial" className="testimonial-area pt-5">
+                            <div className="">
+                                <div className="row ">
+                                    <div className="col-lg-12 ">
+                                        <div className="d-flex justify-content-between">
+                                          <div className="section-title text-center pb-40">
+                                              <div className="line m-auto"></div>
+                                              <h3 className="title"><span> See more</span></h3>
                                           </div> 
                                           { JSON.parse(localStorage.getItem('auth_user')).id === dish.user_id &&
                       
@@ -143,9 +143,9 @@ const Dish = () => {
                                         </div>
                                     </div>
                                 </div> 
-                                <div  class="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
+                                <div  className="row testimonial-active wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s">
                                     { photos.map((item)=>(
-                                        <div class="col-lg-4 gallery_scroll" >
+                                        <div className="col-lg-4 gallery_scroll" >
                                           <img src={`http://localhost:8000/${item.photo}`} alt="" />
                                         </div>
                                       ))}

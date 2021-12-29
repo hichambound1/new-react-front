@@ -22,32 +22,34 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"/>
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png"/>
         
     <!--====== Animate CSS ======-->
-    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="/assets/css/animate.css"/>
         
     <!--====== Magnific Popup CSS ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css"/>
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css"/>
         
     <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/slick.css"/>
+    <link rel="stylesheet" href="/assets/css/slick.css"/>
         
     <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css"/>
+    <link rel="stylesheet" href="/assets/css/LineIcons.css"/>
         
     <!--====== Font Awesome CSS ======-->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
         
     <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     
     <!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/default.css">
     
     <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     
   </head>
@@ -90,86 +92,65 @@
     <!--====== BACK TOP TOP PART ENDS ======-->   
     
     
-
+    
 
     
 
     <!--====== Jquery js ======-->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!-- <script src="assets/js/vendor/jquery-1.12.4.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="/assets/js/vendor/modernizr-3.7.1.min.js"></script>
     
     <!--====== Bootstrap js ======-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/popper.min.js"></script> -->
+    <script src="/assets/js/bootstrap.min.js"></script>
     
     <!--====== Plugins js ======-->
-    <script src="assets/js/plugins.js"></script>
+    <script src="/assets/js/plugins.js"></script>
     
     <!--====== Slick js ======-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
     
     <!--====== Ajax Contact js ======-->
-    <script src="assets/js/ajax-contact.js"></script>
+    <script src="/assets/js/ajax-contact.js"></script>
     
     <!--====== Counter Up js ======-->
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- <script src="assets/js/waypoints.min.js"></script> -->
+    <script src="/assets/js/jquery.counterup.min.js"></script>
     
     <!--====== Magnific Popup js ======-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     
     <!--====== Scrolling Nav js ======-->
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
+    <script src="/assets/js/jquery.easing.min.js"></script>
+    <script src="/assets/js/scrolling-nav.js"></script>
     
     <!--====== wow js ======-->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
     
     <!--====== Particles js ======-->
-    <script src="assets/js/particles.min.js"></script>
+    <script src="/assets/js/particles.min.js"></script>
     
     <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
-    <script>
-      $('.testimonial-active').slick({
-          dots: true,
-          speed: 800,
-          arrows: false,
-          centerMode: true,
-          centerPadding: "0",
-          slidesToShow: 3,
-          slidesToScroll: 4,
-          responsive: [
-              {
-                  breakpoint: 1200,
-                  settings: {
-                      slidesToShow: 3,
-                  }
-              },
-              {
-                  breakpoint: 992,
-                  settings: {
-                      slidesToShow: 2,
-                      centerMode: false,
-                  }
-              },
-              {
-                  breakpoint: 768,
-                  settings: {
-                      slidesToShow: 1,
-                  }
-              },
-              {
-                  breakpoint: 576,
-                  settings: {
-                      slidesToShow: 1,
-                  }
-              },
-          ]
-      });
-    
-    </script>
+ 
+<script>
+  // $('.dropify').dropify();
+  $('.dropify').dropify({
+    messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  'Remove',
+        'error':   'Ooops, something wrong happended.'
+      }
+  });
+</script>
+
     
   </body>
 </html>

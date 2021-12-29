@@ -1344,6 +1344,30 @@ p {
 .carousel .thumbs-wrapper {
   margin: 0 20px !important;
 }
+
+.sticky .dropdown_user a {
+  color: #2E2E2E; }
+
+.dropdown_user a{
+  display: block;
+    padding: 4px 0 !important;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+@media only screen and  (max-width: 991px){
+    .dropdown_user a {
+      display: block;
+      padding: 4px 0;
+      color: #2E2E2E;
+    }
+}
+
+
   /* othmane ------------------------- */
 
 

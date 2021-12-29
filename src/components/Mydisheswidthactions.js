@@ -1,6 +1,6 @@
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+// import OwlCarousel from 'react-owl-carousel';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+// import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
@@ -9,6 +9,10 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Editdish from './Editdish';
 import Adddish from './Adddish';
+
+// import {$, jQuery} from "jquery";
+
+
 const Mydishes = () => {
     const options = {
         
@@ -37,6 +41,15 @@ const Mydishes = () => {
             }
         },
     };
+
+
+    
+//CAROUSEL SETTINGS
+
+
+
+
+
 
     const [data, setData] = useState([]);
     const [dish, setDish] = useState(data);
@@ -113,7 +126,7 @@ const Mydishes = () => {
                     <div className="btns">
                     {isloading && <p>loading...</p>}
                     
-                        {categories && !!categories.length && (
+                        {/* {categories && !!categories.length && (
                          
                         <OwlCarousel className='owl-theme'  {...options}>
                             <div onClick={ () => handleClick('all') } className='item'>
@@ -129,7 +142,26 @@ const Mydishes = () => {
                             
                         </OwlCarousel>
                         )
-                        }
+                        } */}
+
+                            {/* <div className="carouselContainer">
+                                <div className="carouselOfImages">
+                                        <div className="carouselImage">Item 1</div>
+                                        <div className="carouselImage">Item 2</div>
+                                        <div className="carouselImage">Item 3</div>
+                                        <div className="carouselImage">Item 4</div>
+                                        <div className="carouselImage">Item 5</div>
+                                        <div className="carouselImage">Item 6</div>
+                                        <div className="carouselImage">Item 7</div>
+                                        <div className="carouselImage">Item 8</div>
+                                        <div className="carouselImage">Item 9</div>
+                                        <div className="carouselImage">Item 10</div>
+                                </div>
+                            </div> */}
+
+
+            
+
                     </div>
                     <Adddish categories={categories}/>
                 </div>
