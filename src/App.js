@@ -15,7 +15,7 @@ import Myresto from "./site/myresto/Myresto";
 import axios from 'axios';
 import Policies from "./site/policies/Policies";
 import Dishpage from "./site/Dish/Dishpage";
-import Dishpagetest from "./site/Dish/Dishpagetest";
+// import Dishpagetest from "./site/Dish/Dishpagetest";
 import Menu from "./site/menu/Menu";
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -40,7 +40,7 @@ function App() {
            <Route exact path="/profile"        element={<Profile/>}/> 
            <Route exact path="/forgetpassword" element={<Forgetpassword/>}/> 
            <Route       path="/dish/:id"       element={<Dishpage/>}/> 
-           <Route       path="/dishtest"       element={<Dishpagetest/>}/> 
+           {/* <Route       path="/dishtest"       element={<Dishpagetest/>}/>  */}
            <Route       path="/menu/:id"       element={<Menu/>}/> 
            <Route exact path="/resetpassword/:token"  element={<ResetPassword/>}/> 
            <Route exact path="/myresto"        element={<Myresto/>}/> 

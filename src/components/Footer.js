@@ -14,12 +14,10 @@ const Footer = () => {
         .then(json => {
             setIsLoadinginfo(false)
              setInfo(json)
-             
-             
-
-        })
+        }).catch(error =>{
+            setIsLoadinginfo('faild to fetch')             
+            })
         },[])
-
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -71,6 +69,7 @@ const Footer = () => {
                             </Link>
                             <p className="text">{info.description}</p>
                             <ul className="social">
+                            
                                 <li><a href={ info.facebook} target={'_blank'} rel="noreferrer" ><i className="lni-facebook-filled"></i></a></li>
                                 {/* <li><Link to="/"><i className="lni-twitter-filled"></i></Link></li> */}
                                 <li><a href={ info.insta} target={'_blank'} rel="noreferrer" ><i className="lni-instagram-filled"></i></a></li>
@@ -111,6 +110,7 @@ const Footer = () => {
                             <div className="footer-title">
                                 <h4 className="title">Contact Us</h4>
                             </div>
+                            {Loadinginfo===true ? <p>loading...</p> : <p className="text-white">{Loadinginfo}</p>} 
                             <ul className="contact">
                                 <li>{info.phone}</li>
                                 <li>{info.email}</li>

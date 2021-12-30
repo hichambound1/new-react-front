@@ -3,14 +3,14 @@ import Navbar from "../../components/Navbar";
 import React, {  useState } from "react";
 import QRCode from "qrcode.react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 
 
 
 const Profile = () => {
     const [qrValue, setQrValue] = useState("");
     // setQrValue()
-    let navigate = useNavigate();
+   
     
   const downloadQRCode = () => {
     // Generate download with use canvas and stream

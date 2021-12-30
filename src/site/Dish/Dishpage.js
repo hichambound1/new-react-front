@@ -13,6 +13,7 @@ import axios from 'axios';
 
 const Dish = () => {
     const { id } = useParams();
+    console.log(styles);
     // const history = useHistory();
   const [dish, setDish] = useState([]);
   const [photos, setPhotos] = useState([]);
@@ -38,7 +39,7 @@ const Dish = () => {
 
         })
 
-      },[])
+      },[id])
      
       
 

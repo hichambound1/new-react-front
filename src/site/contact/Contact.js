@@ -16,7 +16,9 @@ const Contact = () => {
             setIsLoadinginfo(false)
              setInfo(json) 
 
-        })
+        }).catch(error =>{
+            setIsLoadinginfo('faild to fetch')             
+            })
         },[])
 
         const [name, setName] = useState('');
@@ -73,6 +75,7 @@ const Contact = () => {
                                     <div className="icon d-flex align-items-center justify-content-center">
                                         <span className="fa fa-map-marker"></span>
                                     </div>
+                                    {Loadinginfo===true ? <p>loading...</p> : <p>{Loadinginfo}</p>} 
                                     <div className="team-content">
                                         <h5 className="holder-name">
                                             <Link to="#">Address</Link>
