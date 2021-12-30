@@ -55,10 +55,10 @@ const Menu = () =>{
 
                                                 <div className="">
                                                     <span className="col-6 mx-auto d-flex justify-content-around">
-                                                        <a href='#' className="text-light fa fa-facebook-square fs-3 "></a>
-                                                        <a href='#' className="text-light fa fa-instagram fs-3 "></a>
-                                                        <a href='#' className="text-light fa fa-twitter fs-3 "></a>
-                                                        <a href='#' className="text-light fa fa-youtube fs-3 "></a>
+                                                        <a href={resto.facebook}  target={'_blank'} rel="noreferrer"  className="text-light"><i className='fa fa-facebook-square fs-3'></i></a>
+                                                        <a href={resto.insta} target={'_blank'} rel="noreferrer"  className="text-light"><i className='fa fa-instagram fs-3'></i></a>
+                                                        <a href={resto.twitter} target={'_blank'} rel="noreferrer" className="text-light "><i className='fa fa-twitter fs-3 '></i></a>
+                                                        <a href={resto.youtube} target={'_blank'} rel="noreferrer" className="text-light  "><i className='fa fa-youtube fs-3'></i></a>
                                                     </span>
                                                 </div>
                                             </div>
