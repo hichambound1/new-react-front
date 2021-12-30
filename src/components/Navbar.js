@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate, NavLink as Link } from 'react-router-dom';
 const Navbar = () => {
     
     let navigate= useNavigate();
@@ -73,20 +73,35 @@ const Navbar = () => {
     
                                 <div className="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                     <ul id="nav" className="navbar-nav ml-auto">
-                                        <li className="nav-item active">
-                                        <Link to="/" className="page-scroll">
+                                        <li className="nav-item " >
+                                        <Link 
+                                            to="/" 
+                                            className={({ isActive }) =>
+                                                    isActive ? 'page-scroll active_link_navbar' : 'page-scroll'
+                                                }
+                                            >
                                             Home
                                         </Link>
                                         </li>
                                        
                                        
-                                        <li className="nav-item">
-                                            <Link to="/about" className="page-scroll">
+                                        <li className="nav-item" >
+                                            <Link 
+                                                to="/about" 
+                                                className={({ isActive }) =>
+                                                        isActive ? 'page-scroll active_link_navbar' : 'page-scroll'
+                                                    }
+                                                >
                                                 About
                                             </Link>
                                         </li>
-                                        <li className="nav-item">
-                                            <Link to="/contact" className="page-scroll">
+                                        <li className="nav-item" >
+                                            <Link 
+                                                to="/contact"
+                                                className={({ isActive }) =>
+                                                        isActive ? 'page-scroll active_link_navbar' : 'page-scroll'
+                                                    }
+                                                >
                                                 Contact
                                             </Link>
                                         </li>

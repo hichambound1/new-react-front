@@ -1376,6 +1376,11 @@ p {
 .fs-3 {
   font-size: calc(1.3rem + .6vw)!important;
 } 
+
+
+.active_link_navbar{
+	color: #007bff !important;
+}
   /* othmane ------------------------- */
 
 
@@ -1409,11 +1414,8 @@ p {
     -webkit-box-orient: vertical;
   }
 
-<<<<<<< HEAD
-=======
   
 
->>>>>>> origin/rhazlani
 
     @media (max-width: 767px) {
       .single-blog .blog-content .text {
