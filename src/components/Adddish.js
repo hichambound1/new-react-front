@@ -91,15 +91,15 @@ const Adddish = (props) => {
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="name" className="mb-2">Name</label>
-                                        <input type="text" value={name}  onChange={e => setName(e.target.value)}   className="form-control" name="name" placeholder="Enter Name" />
+                                        <input type="text" required value={name}  onChange={e => setName(e.target.value)}   className="form-control" name="name" placeholder="Enter Name" />
                                         <span className="text-danger">{errorname}</span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="category" className="mb-2">Category</label>
-                                        <select name="category"  onChange={e => setCategory(e.target.value)}  className="form-control">
-                                            <option disabled>Select a category</option>
+                                        <select name="category" required onChange={e => setCategory(e.target.value)}  className="form-control">
+                                            <option selected disabled>Select a category</option>
                                             {categories.map((item)=>(
                                                 <option key={item.id}  value={item.id}>{item.name_en}</option>
                                             ))}
@@ -111,35 +111,35 @@ const Adddish = (props) => {
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="price" className="mb-2">Price</label>
-                                        <input type="number" value={price}  onChange={e => setPrice(e.target.value)}   className="form-control" name="price" placeholder="Enter price" />
+                                        <input type="number" required value={price}  onChange={e => setPrice(e.target.value)}   className="form-control" name="price" placeholder="Enter price" />
                                         <span className="text-danger">{errorprice}</span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="currency" className="mb-2">Currency</label>
-                                        <input type="text" value={currency}  onChange={e => setCurrency(e.target.value)}   className="form-control" name="currency" placeholder="$/.د.م/€/£" />
+                                        <input type="text" required value={currency}  onChange={e => setCurrency(e.target.value)}   className="form-control" name="currency" placeholder="$/.د.م/€/£" />
                                         <span className="text-danger">{errorcurrency}</span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="description">Description</label>
-                                        <textarea name="description" value={description}  onChange={e => setDescription(e.target.value)}  id="description" cols="30" rows="4" className="form-control"></textarea>
+                                        <textarea name="description" required value={description}  onChange={e => setDescription(e.target.value)}  id="description" cols="30" rows="4" className="form-control"></textarea>
                                         <span className="text-danger">{errordescription}</span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="ingredients">Ingredients</label>
-                                        <textarea name="ingredients" value={ingredients}  onChange={e => setIngredients(e.target.value)}  id="ingredients" cols="30" rows="4" className="form-control"></textarea>
+                                        <textarea name="ingredients" required value={ingredients}  onChange={e => setIngredients(e.target.value)}  id="ingredients" cols="30" rows="4" className="form-control"></textarea>
                                         <span className="text-danger">{erroringredients}</span>
                                     </div>
                                 </div>
                                 <div className="col-md-6 ">
                                     <div className="form-group">
                                         <label htmlFor="photo">Photo</label>
-                                        <input name="photo"   onChange={e => setPhotoupload(e.target.files[0])}  type="file" className="form-control" />
+                                        <input name="photo" required  onChange={e => setPhotoupload(e.target.files[0])}  type="file" className="form-control" />
                                         <span className="text-danger">{errorphoto}</span>
                                     </div>
                                 </div>

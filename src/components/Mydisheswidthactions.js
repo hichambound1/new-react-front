@@ -112,21 +112,7 @@ const Mydishes = () => {
                         )
                         } 
 
-                            {/* <div className="carouselContainer">
-                                <div className="carouselOfImages">
-                                        <div className="carouselImage">Item 1</div>
-                                        <div className="carouselImage">Item 2</div>
-                                        <div className="carouselImage">Item 3</div>
-                                        <div className="carouselImage">Item 4</div>
-                                        <div className="carouselImage">Item 5</div>
-                                        <div className="carouselImage">Item 6</div>
-                                        <div className="carouselImage">Item 7</div>
-                                        <div className="carouselImage">Item 8</div>
-                                        <div className="carouselImage">Item 9</div>
-                                        <div className="carouselImage">Item 10</div>
-                                </div>
-                            </div> */}
-
+                           
 
             
 
@@ -171,6 +157,12 @@ const Mydishes = () => {
                         <div><Editdish  olddish={item} categories={categories}/></div>
                         <div role="button" onClick={()=>handleDelete(item.id)}><i className="lni lni-trash  bg-danger text-white p-2 rounded-pill"></i></div>
                     </div>
+                   
+                    {item.statu === '0' &&
+                    <div className="row">
+                        <small className='text-danger'>You will not see this dish in your menu ,contact the support to figure out why ! </small>
+                    </div>
+                    }
                 </div> 
             </div> 
                 ))}

@@ -17,7 +17,8 @@ const Mydishes = () => {
         axios.defaults.withCredentials = true;
         axios.get('http://localhost:8000/api/mydishes/'+JSON.parse(localStorage.getItem('auth_user')).id)
             .then(response => {   
-                setData(response.data.data) 
+                const newdata = response.data.data.filter(item=>item.statu==='1');
+                setData(newdata) 
                 setIsLoadingdish(false)           
                
             }).catch(err=>{
