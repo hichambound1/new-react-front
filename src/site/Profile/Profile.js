@@ -68,7 +68,7 @@ const Profile = () => {
                     localStorage.removeItem('auth_user')
                     localStorage.setItem('auth_user', JSON.stringify(response.data))
                     setIsLoadingsubmit(false);
-                    navigate('/profile')
+                    window.location.reload()
                    
         }).catch(error =>{
             

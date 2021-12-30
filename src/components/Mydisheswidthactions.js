@@ -7,37 +7,8 @@ import Footer from './Footer';
 import Editdish from './Editdish';
 import Adddish from './Adddish';
 import Carousel from 'react-elastic-carousel';
-
 const Mydishes = () => {
-    // const options = {
-        
-    //     responsiveClass: true,
-    //     nav: true,
-    //     dots: false,
-    //     autoplay: true,
-    //     margin: 12,
-    //     // navText: ["Prev", "Next"],
-    //     smartSpeed: 100,
-    //     responsive: {
-    //         0: {
-    //             items: 3,
-    //         },
-    //         400: {
-    //             items: 4,
-    //         },
-    //         600: {
-    //             items: 4,
-    //         },
-    //         700: {
-    //             items: 6,
-    //         },
-    //         1000: {
-    //             items: 12,
     
-    //         }
-    //     },
-    // };
-   
     const [data, setData] = useState([]);                    
     const [categories, setCategories] = useState([]);
   
@@ -105,7 +76,8 @@ const Mydishes = () => {
                 axios.delete('http://localhost:8000/api/dish/delete/'+dishid)
                 .then(response => {               
                     console.log('good');       
-                    // history.go(0)
+                    
+                    window.location.reload()
                 }).catch( err =>{
                     console.log('bad');       
                 })

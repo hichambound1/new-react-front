@@ -1,10 +1,60 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import swal from 'sweetalert';
 
 const Contact = () => {
    
-   
+    const [Loadinginfo,setIsLoadinginfo] = useState(true);
+    const [info,setInfo] = useState('');
+    useEffect( ()=>{
+        fetch(`http://localhost:8000/api/info/`)
+        .then(response =>response.json())
+        .then(json => {
+            setIsLoadinginfo(false)
+             setInfo(json) 
+
+        })
+        },[])
+
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        const [message, setMessage] = useState('');
+        const [subject, setSubject] = useState('');
+        const [success, setSuccess] = useState('');
+        const [isloadingsubmit, setIsLoadingsubmit] = useState(false);
+        const [errorname, setErrorname] = useState('');
+        const [erroremail, setErroremail] = useState('');
+        const [errormessage, setErrormessage] = useState('');
+        const [errorsubject, setErrorsubject] = useState('');
+        const handleSubmit = e => {
+            e.preventDefault();
+            setIsLoadingsubmit(true)
+            axios.post('http://localhost:8000/api/contact', {
+                email: email,
+                name: name,
+                message: message,
+                subject: subject,
+            }).then(response => {
+                setIsLoadingsubmit(false)
+                setSuccess('Your message was sent, thank you!')
+                swal("Your message was sent, thank you!", {
+                    icon: "success",
+                  });
+            }).catch(error =>{
+                console.log('bad');
+                setIsLoadingsubmit(false)
+                setErrorname(error.response.data.errors.name)
+                setErroremail(error.response.data.errors.email)
+                setErrorsubject(error.response.data.errors.subject)
+                setErrormessage(error.response.data.errors.message)
+                
+            })
+        
+        }
+    
     return (
         <div className="contact">
             <Navbar/>
@@ -27,7 +77,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Address</Link>
                                         </h5>
-                                        <p className="text">+212 654523223</p>
+                                        <p className="text">{info.address}</p>
                                     </div>
                             </div>
                                     </div>
@@ -41,7 +91,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Phone: </Link>
                                         </h5>
-                                        <p className="text">+212 654523223</p>
+                                        <p className="text">{info.phone}</p>
                                     </div>
                                 
                             </div>
@@ -55,7 +105,7 @@ const Contact = () => {
                                         <h5 className="holder-name">
                                             <Link to="#">Email :</Link>
                                         </h5>
-                                        <p className="text">contact@qrresto.com</p>
+                                        <p className="text">{info.email}</p>
                                     </div>
                             </div>
                                     </div>
@@ -79,37 +129,41 @@ const Contact = () => {
                                             <h3 className="mb-4">Contact Us</h3>
                                             <div id="form-message-warning" className="mb-4"></div> 
                                     <div id="form-message-success" className="mb-4">
-                                    Your message was sent, thank you!
+                                    {success}
                                     </div>
-                                            <form  id="contactForm" name="contactForm" className="contactForm">
+                                            <form  onSubmit={handleSubmit} id="contactForm" name="contactForm" className="contactForm">
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
                                                             <label className="label" htmlFor="name">Full Name</label>
-                                                            <input type="text" className="form-control shadow-0" name="name" id="name" placeholder="Name" />
+                                                            <input type="text" value={name}  onChange={e => setName(e.target.value)} className="form-control shadow-0" name="name" id="name" placeholder="Name" />
+                                                            <span className="text-danger">{errorname}</span>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6"> 
                                                         <div className="form-group">
                                                             <label className="label" htmlFor="email">Email Address</label>
-                                                            <input type="email" className="form-control" name="email" id="email" placeholder="Email" />
+                                                            <input type="email" value={email}  onChange={e => setEmail(e.target.value)} className="form-control" name="email" id="email" placeholder="Email" />
+                                                            <span className="text-danger">{erroremail}</span>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
                                                             <label className="label" htmlFor="subject">Subject</label>
-                                                            <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" />
+                                                            <input type="text" value={subject}  onChange={e => setSubject(e.target.value)} className="form-control" name="subject" id="subject" placeholder="Subject" />
+                                                            <span className="text-danger">{errorsubject}</span>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
                                                             <label className="label" htmlFor="#">Message</label>
-                                                            <textarea name="message" className="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                            <textarea name="message" value={message}  onChange={e => setMessage(e.target.value)} className="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                            <span className="text-danger">{errormessage}</span>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <input type="submit" value="Send Message" className="main-btn" />
+                                                            <input type="submit" disabled={isloadingsubmit}  value={isloadingsubmit ? 'loading...' : 'Send Message'} className="main-btn" />
                                                             <div className="submitting"></div>
                                                         </div>
                                                     </div>

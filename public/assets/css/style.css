@@ -1368,6 +1368,14 @@ p {
 }
 
 
+.home header h5{
+  line-height: 1.5!important;
+}
+
+
+.fs-3 {
+  font-size: calc(1.3rem + .6vw)!important;
+} 
   /* othmane ------------------------- */
 
 
