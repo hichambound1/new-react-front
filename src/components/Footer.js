@@ -29,9 +29,12 @@ const Footer = () => {
                             icon: "success",
                           });
                     }).catch(error =>{
-                        swal(`Something went wrong  : ${error.response.data.errors.email}`, {
-                            icon: "warning",
-                          });
+                        if(error.response.data.errors){
+
+                            swal(`Something went wrong  : ${error.response.data.errors.email}`, {
+                                icon: "warning",
+                            });
+                        }
                           
                         
                     })

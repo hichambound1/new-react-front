@@ -1289,8 +1289,6 @@ p {
       object-fit: cover;
     object-position: center; 
     }
-<<<<<<< HEAD
-=======
 
 
     .div_imgdetail_product {
@@ -1370,7 +1368,14 @@ p {
 }
 
 
->>>>>>> origin/rhazlani
+.home header h5{
+  line-height: 1.5!important;
+}
+
+
+.fs-3 {
+  font-size: calc(1.3rem + .6vw)!important;
+} 
   /* othmane ------------------------- */
 
 
@@ -1879,3 +1884,101 @@ p {
 }
 /* hero */
 /* end hicham style */
+
+
+
+
+/*-------------------------------- 404 ----------------------------*/
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+body {
+  padding: 0;
+  margin: 0
+}
+
+#notfound {
+  position: relative;
+  height: 100vh
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.notfound {
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding: 15px
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 220px
+}
+
+.notfound .notfound-404 h1 {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 186px;
+  font-weight: 200;
+  margin: 0;
+  background: linear-gradient(130deg,  #119bd2 50%, #33c8c1 100%);
+  color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.notfound h2 {
+  font-size: 33px;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: 3px
+}
+
+.notfound p {
+  font-size: 16px;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 25px
+}
+
+.notfound a {
+  color: #119bd2;
+  font-weight: 200;
+  text-decoration: none;
+  border-bottom: 1px solid #119bd2;
+  border-radius: 2px
+}
+
+@media only screen and (max-width:480px) {
+  .notfound .notfound-404 {
+      position: relative;
+      height: 168px
+  }
+
+  .notfound .notfound-404 h1 {
+      font-size: 142px
+  }
+
+  .notfound h2 {
+      font-size: 22px
+  }
+}
+
+/*-------------------------------- end 404 ----------------------------*/

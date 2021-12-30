@@ -64,20 +64,20 @@ const Mydishes = () => {
             <div className="row my-5 justify-content-between">
                     <div className="col-12">
                     {isloading===true ? <p>loading...</p> : isloading} 
-                    
+
                         {categories && !!categories.length && (                           
                             <Carousel breakPoints={breakPoints} itemsToShow={6} enableAutoPlay autoPlaySpeed={2500}>
                                         <div onClick={ () => handleClick('all') } className='item'>
                                             <p>All</p>
                                         </div>
-                            { categories.map((item)=>(
+                                { categories.map((item)=>(
                                         <div onClick={ () => handleClick(item.name_en) } key={item.id} className='item'>
                                             <p>{item.name_en}</p>
                                         </div>
                                     ))}
                             </Carousel>                         
                         )
-                        }     
+                        }
 
                     </div>
                     {/* <Adddish categories={categories}/> */}
