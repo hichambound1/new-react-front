@@ -10,8 +10,8 @@ import axios from "axios";
 const Profile = () => {
     const [qrValue, setQrValue] = useState("");
     // setQrValue()
-   
     
+
   const downloadQRCode = () => {
     // Generate download with use canvas and stream
     const canvas = document.getElementById("qr-gen");
@@ -101,54 +101,116 @@ const Profile = () => {
                             <form onSubmit={handleSubmit}   encType="multipart/form-data">
                                 <div className="row">
 
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="name">Business Name</label>
-                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" required/>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="address">Address</label>
-                                            <input type="text"  className="form-control"  onChange={e => setAddressen(e.target.value)}  value={addressen} name="address" placeholder="Enter address" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="phone">Phone</label>
-                                            <input type="text"  className="form-control"  onChange={e => setPhone(e.target.value)}  value={phone} name="phone" placeholder="Enter phone" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email</label>
-                                            <input type="email"  className="form-control"  onChange={e => setEmail(e.target.value)}  value={email} name="email" placeholder="Enter email" />
-                                            <span className="text-danger">{errormail}</span>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="logo">Logo</label>
-                                            <img src={'http://localhost:8000/'+user.logo} width="100px" alt="" />
-                                            
-                                            <input type="file" onChange={e => setLogo(e.target.files[0])}  className="form-control dropify" name="logo"  />
-                                            <span className="text-danger">{errorlogo}</span>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="cover">Cover</label>
-                                            <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                                            <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
-                                            <span className="text-danger">{errorcover}</span>
-                                        </div>
-                                    </div>
+                                    
+
                                     <div className="col-md-12 p-3">
-                                        <div className="form-group">
-                                            <label htmlFor="description">Description</label>
-                                            <textarea name="description" id="description" cols="30" rows="4"  onChange={e => setDescriptioneen(e.target.value)}  value={descriptionen} className="form-control"></textarea>
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="">
+                                                <div class="" id="headingTwo">
+                                                    <h2 class="mb-0" id="headingTwo">
+                                                        <button class="accordion-button " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            Change Your Info
+                                                        </button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapseOne" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        
+                                                        <div className="row">
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="name">Business Name</label>
+                                                                    <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" required/>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="address">Address</label>
+                                                                    <input type="text"  className="form-control"  onChange={e => setAddressen(e.target.value)}  value={addressen} name="address" placeholder="Enter address" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="phone">Phone</label>
+                                                                    <input type="text"  className="form-control"  onChange={e => setPhone(e.target.value)}  value={phone} name="phone" placeholder="Enter phone" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="email">Email</label>
+                                                                    <input type="email"  className="form-control"  onChange={e => setEmail(e.target.value)}  value={email} name="email" placeholder="Enter email" />
+                                                                    <span className="text-danger">{errormail}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="logo">Logo</label>
+                                                                    <img src={'http://localhost:8000/'+user.logo} width="100px" alt="" />
+                                                                    
+                                                                    <input type="file" onChange={e => setLogo(e.target.files[0])}  className="form-control dropify" name="logo"  />
+                                                                    <span className="text-danger">{errorlogo}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-6 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="cover">Cover</label>
+                                                                    <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
+                                                                    <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
+                                                                    <span className="text-danger">{errorcover}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-12 p-3">
+                                                                <div className="form-group">
+                                                                    <label htmlFor="description">Description</label>
+                                                                    <textarea name="description" id="description" cols="30" rows="4"  onChange={e => setDescriptioneen(e.target.value)}  value={descriptionen} className="form-control"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="" id="headingTwo">
+                                                    <h2 class="mb-0" id="headingTwo">
+                                                        <button class="accordion-button " type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            Social Links
+                                                        </button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body">
+                                                        <div className="form-group">
+                                                            <label htmlFor="name">Facebook</label>
+                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.facebook.com/qrresto" required/>
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <label htmlFor="name">Instagram</label>
+                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.instagram.com/qrresto" required/>
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <label htmlFor="name">Youtube</label>
+                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.youtube.com/qrresto" required/>
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <label htmlFor="name">Twitter</label>
+                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.twitter.com/qrresto" required/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
+
+
+
+
+
+                                    
+
+
+
                                     <div className="col-md-6  p-3">
                                         <div className="form-group">
                                             <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit}   className="main-btn w-100 text-white " name="submit"  />
