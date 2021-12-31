@@ -8,10 +8,10 @@ const Hero = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-8">
                         <div className="header-hero-content text-center">
-                            <h3 className="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Basic - SaaS Landing Page</h3>
-                            <h2 className="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Kickstart Your SaaS or App Site</h2>
-                            <p className="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                            <Link to="#" className="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Get Started</Link>
+                            {/* <h3 className="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Basic - SaaS Landing Page</h3> */}
+                            <h2 className="header-title wow fadeInUp  text-capitalize" data-wow-duration="1.3s" data-wow-delay="0.5s">an easy and modern  QR code menu For your guests </h2>
+                            <p className="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Let your guests see  your meals from their own device.</p>
+                            <Link to="/login" className="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Create Menu</Link>
                         </div> 
                         
                     </div>

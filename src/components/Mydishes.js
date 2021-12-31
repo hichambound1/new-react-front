@@ -98,7 +98,7 @@ const Mydishes = () => {
             <div className="row justify-content-center">
             {isloadingdish && <p>loading...</p>}
                     {data.map((item)=>(
-                    <div className="col-lg-3 col-md-7 p-2 " key={item.id}>
+                    <div className="col-lg-3 col-6 col-md-4 p-2 " key={item.id}>
                         <div className="single-blog mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <div className="blog-image ">
                                 <img src={`http://localhost:8000/`+item.photo}  height='200px' alt="blog" />

@@ -18,10 +18,11 @@ const Home = () => {
                     <div className="about-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div className="section-title">
                             <div className="line"></div>
-                            <h3 className="title">Quick & Easy <span>to Use Bootstrap Template</span></h3>
+                            <h3 className="title">Quick & Easy <span>menu managment</span></h3>
                         </div> 
-                        <p className="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <Link to="#" className="main-btn">Try it Free</Link>
+                        <p className="text  ">This platform provide an easy and modern QR code menu,to Let your guests see your meals from their own device. this menu specifically designed for smartphone use.Your customers will check out your menu while looking at your images .
+ this is an digital platform built around your QR code menu for improving a quality of customer service </p>
+                        <Link to="/about" className="main-btn">Read more</Link>
                     </div> 
                 </div>
                 <div className="col-lg-6">
