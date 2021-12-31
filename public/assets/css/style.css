@@ -1407,8 +1407,9 @@ p {
   font-size: 1rem;
   color: #212529;
   text-align: left;
-  background-color: #fff;
-  border: 0;
+  background-color: #f8f9fa;
+  margin: 3px;
+  border: none;
   border-radius: 0;
   overflow-anchor: none;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
