@@ -4,10 +4,24 @@ import React, {  useState } from "react";
 import QRCode from "qrcode.react";
 import axios from "axios";
 
+import { FilePond, File, registerPlugin } from 'react-filepond'
 
+// Import FilePond styles
+import 'filepond/dist/filepond.min.css'
 
+// Import the Image EXIF Orientation and Image Preview plugins
+// Note: These need to be installed separately
+// `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
+import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
+
+// Register the plugins
+registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 const Profile = () => {
+    
+    const [files, setFiles] = useState([])
     const [qrValue, setQrValue] = useState("");
     // setQrValue()
     
@@ -87,6 +101,8 @@ const Profile = () => {
         )
     });
 }
+
+
    
     return (
         <div className="profile">
@@ -152,12 +168,22 @@ const Profile = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-6 p-3">
-                                                                <div className="form-group">
-                                                                    <label htmlFor="cover">Cover</label>
+                                                                {/* <div className="form-group">
+                                                                    <label htmlFor="cover">Cover</label> */}
                                                                     <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                                                                    <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
+                                                                    {/* <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
                                                                     <span className="text-danger">{errorcover}</span>
-                                                                </div>
+                                                                </div> */}
+                                                                <FilePond
+                                                                    files={files}
+                                                                    onupdatefiles={setFiles}
+                                                                    allowMultiple={true}
+                                                                    maxFiles={3}
+                                                                    server="http://localhost:3000/api"
+                                                                    name="cover" 
+                                                                    labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+                                                                    onChange={e => setCover(e.target.files[0])}
+                                                                />
                                                             </div>
                                                             <div className="col-md-12 p-3">
                                                                 <div className="form-group">
@@ -166,7 +192,6 @@ const Profile = () => {
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
