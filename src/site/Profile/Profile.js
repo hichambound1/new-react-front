@@ -4,20 +4,20 @@ import React, {  useState } from "react";
 import QRCode from "qrcode.react";
 import axios from "axios";
 
-import { FilePond, File, registerPlugin } from 'react-filepond'
+// import { FilePond, File, registerPlugin } from 'react-filepond'
 
 // Import FilePond styles
-import 'filepond/dist/filepond.min.css'
+// import 'filepond/dist/filepond.min.css'
 
 // Import the Image EXIF Orientation and Image Preview plugins
 // Note: These need to be installed separately
 // `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
+// import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+// import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+// import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 
 // Register the plugins
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
+// registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 const Profile = () => {
     
@@ -46,11 +46,16 @@ const Profile = () => {
   const [phone, setPhone] = useState(user.phone);
   const [email, setEmail] = useState(user.email);
   const [addressen, setAddressen] = useState(user.address_en);
+  const [facebook, setfacebook] = useState(user.facebook);
+  const [insta, setinsta] = useState(user.insta);
+  const [youtube, setyoutube] = useState(user.youtube);
+  const [twitter, settwitter] = useState(user.twitter);
   const [logo, setLogo] = useState();
   const [cover, setCover] = useState();
   const [errorlogo, setErrorlogo] = useState();
   const [errorcover, setErrorcover] = useState();
   const [errormail, setErrormail] = useState();
+  
 
   const [isloadingsubmit, setIsLoadingsubmit] = useState(false);
   const handleSubmit = e => {
@@ -61,6 +66,10 @@ const Profile = () => {
     fd.append('name_en',nameen)
     fd.append('email',email)
     fd.append('phone',phone)
+    fd.append('facebook',facebook)
+    fd.append('insta',insta)
+    fd.append('youtube',youtube)
+    fd.append('twitter',twitter)
     if(logo){
         fd.append('logo',logo)
     }
@@ -168,13 +177,13 @@ const Profile = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-6 p-3">
-                                                                {/* <div className="form-group">
-                                                                    <label htmlFor="cover">Cover</label> */}
+                                                                <div className="form-group">
+                                                                    <label htmlFor="cover">Cover</label>
                                                                     <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                                                                    {/* <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
+                                                                    <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
                                                                     <span className="text-danger">{errorcover}</span>
-                                                                </div> */}
-                                                                <FilePond
+                                                                </div>
+                                                                {/* <FilePond
                                                                     files={files}
                                                                     onupdatefiles={setFiles}
                                                                     allowMultiple={true}
@@ -183,7 +192,7 @@ const Profile = () => {
                                                                     name="cover" 
                                                                     labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
                                                                     onChange={e => setCover(e.target.files[0])}
-                                                                />
+                                                                /> */}
                                                             </div>
                                                             <div className="col-md-12 p-3">
                                                                 <div className="form-group">
@@ -207,19 +216,19 @@ const Profile = () => {
                                                     <div class="card-body">
                                                         <div className="form-group">
                                                             <label htmlFor="name">Facebook</label>
-                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.facebook.com/qrresto" required/>
+                                                            <input type="text"  className="form-control" name="facebook"  onChange={e => setfacebook(e.target.value)} value={facebook} placeholder="https://www.facebook.com/qrresto" />
                                                         </div>
                                                         <div className="form-group">
                                                             <label htmlFor="name">Instagram</label>
-                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.instagram.com/qrresto" required/>
+                                                            <input type="text"  className="form-control" name="insta"  onChange={e => setinsta(e.target.value)} value={insta} placeholder="https://www.instagram.com/qrresto" />
                                                         </div>
                                                         <div className="form-group">
                                                             <label htmlFor="name">Youtube</label>
-                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.youtube.com/qrresto" required/>
+                                                            <input type="text"  className="form-control" name="youtube"  onChange={e => setyoutube(e.target.value)} value={youtube} placeholder="https://www.youtube.com/qrresto" />
                                                         </div>
                                                         <div className="form-group">
                                                             <label htmlFor="name">Twitter</label>
-                                                            <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="https://www.twitter.com/qrresto" required/>
+                                                            <input type="text"  className="form-control" name="twitter"  onChange={e => settwitter(e.target.value)} value={twitter} placeholder="https://www.twitter.com/qrresto" />
                                                         </div>
                                                     </div>
                                                 </div>
