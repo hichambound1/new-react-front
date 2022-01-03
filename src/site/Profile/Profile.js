@@ -175,9 +175,9 @@ const Profile = () => {
                                                                     <span className="text-danger">{errorcover}</span>
                                                                 </div> */}
                                                                 <FilePond
-                                                                    files={files}
-                                                                    onupdatefiles={setFiles}
-                                                                    allowMultiple={true}
+                                                                    files={cover}
+                                                                    onupdatefiles={setCover}
+                                                                    // allowMultiple={true}
                                                                     maxFiles={3}
                                                                     server="http://localhost:3000/api"
                                                                     name="cover" 
