@@ -1,27 +1,29 @@
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+
+import { useNavigate } from "react-router-dom";
 import React, {  useState } from "react";
 import QRCode from "qrcode.react";
 import axios from "axios";
 
-import { FilePond, File, registerPlugin } from 'react-filepond'
+// import { FilePond, File, registerPlugin } from 'react-filepond'
 
 // Import FilePond styles
-import 'filepond/dist/filepond.min.css'
+// import 'filepond/dist/filepond.min.css'
 
 // Import the Image EXIF Orientation and Image Preview plugins
 // Note: These need to be installed separately
 // `npm i filepond-plugin-image-preview filepond-plugin-image-exif-orientation --save`
-import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
+// import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+// import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+// import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 
 // Register the plugins
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
+// registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 const Profile = () => {
     
+    const [files, setFiles] = useState([])
     const [qrValue, setQrValue] = useState("");
+    const navigate = useNavigate()
     // setQrValue()
     
 
@@ -51,15 +53,9 @@ const Profile = () => {
   const [twitter, settwitter] = useState(user.twitter);
   const [logo, setLogo] = useState();
   const [cover, setCover] = useState();
-
-  const [errornameen, setErrornameen] = useState();
-  const [errorphone, setErrorphone] = useState();
-  const [erroraddressen, setErroraddressen] = useState();
-
   const [errorlogo, setErrorlogo] = useState();
   const [errorcover, setErrorcover] = useState();
   const [errormail, setErrormail] = useState();
-  const [errordescriptionen, setErrordescriptionen] = useState();
   
 
   const [isloadingsubmit, setIsLoadingsubmit] = useState(false);
@@ -85,31 +81,28 @@ const Profile = () => {
     fd.append('address_en',addressen)
     fd.append('description_en',descriptionen)
     fd.append('user_id',JSON.parse(localStorage.getItem('auth_user')).id)
-
+  
 
     axios.defaults.withCredentials = true;
     axios.get('http://localhost:8000/sanctum/csrf-cookie')
     .then(response => {
-
+        
         axios.post('http://localhost:8000/api/user/update',fd
         ).then(response => {
                     localStorage.removeItem('auth_user')
                     localStorage.setItem('auth_user', JSON.stringify(response.data))
                     setIsLoadingsubmit(false);
-                    window.location.reload()
-
+                    // window.location.reload()
+                    navigate('/myresto')
+                   
         }).catch(error =>{
-
+            
             console.log('bad');
             setIsLoadingsubmit(false);
             console.log(error.response);
             if(error.response.data.errors){
-                setErrornameen(error.response.data.errors.name_en)
-                setErrorphone(error.response.data.errors.phone)
-                setErroraddressen(error.response.data.errors.address_en)
                 setErrorlogo(error.response.data.errors.logo)
                 setErrorcover(error.response.data.errors.cover)
-                setErrordescriptionen(error.response.data.errors.description_en)
                 
             }else{
                 setErrormail(error.response.data.message)
@@ -124,11 +117,11 @@ const Profile = () => {
    
     return (
         <div className="profile">
-            <Navbar/>
+            {/* <Navbar/> */}
           
             
             <div className="container p-3 shadow rounded">
-                <h2 className="text-center text-capitalize m-3">Profile</h2>
+                <h2 className="text-center text-capitalize m-3">Let's create our profile </h2>
                 <div className="row">
                             <div className="col-lg-8">
 
@@ -143,33 +136,30 @@ const Profile = () => {
                                                 <div class="" id="headingTwo">
                                                     <h2 class="mb-0" id="headingTwo">
                                                         <button class="accordion-button " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                            Change Your Info
+                                                            Our Info
                                                         </button>
                                                     </h2>
                                                 </div>
                                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                                     <div class="card-body">
-
+                                                        
                                                         <div className="row">
                                                             <div className="col-md-6 p-3">
                                                                 <div className="form-group">
                                                                     <label htmlFor="name">Business Name</label>
-                                                                    <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" />
-                                                                    <span className="text-danger">{errornameen}</span>
+                                                                    <input type="text"  className="form-control" name="name"  onChange={e => setNameen(e.target.value)} value={nameen} placeholder="Enter Name" required/>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-6 p-3">
                                                                 <div className="form-group">
                                                                     <label htmlFor="address">Address</label>
                                                                     <input type="text"  className="form-control"  onChange={e => setAddressen(e.target.value)}  value={addressen} name="address" placeholder="Enter address" />
-                                                                    <span className="text-danger">{erroraddressen}</span>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-6 p-3">
                                                                 <div className="form-group">
                                                                     <label htmlFor="phone">Phone</label>
                                                                     <input type="text"  className="form-control"  onChange={e => setPhone(e.target.value)}  value={phone} name="phone" placeholder="Enter phone" />
-                                                                    <span className="text-danger">{errorphone}</span>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-6 p-3">
@@ -190,36 +180,26 @@ const Profile = () => {
                                                             </div>
                                                             <div className="col-md-6 p-3">
                                                                 <div className="form-group">
-                                                                    {/* <label htmlFor="cover">Cover</label> */}
+                                                                    <label htmlFor="cover">Cover</label>
                                                                     <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                                                                    {/* <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  /> */}
+                                                                    <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
                                                                     <span className="text-danger">{errorcover}</span>
                                                                 </div>
-                                                                
-                                                                <FilePond
-                                                                    // files={cover}
-                                                                    onupdatefiles={cover => {
-                                                                        setCover({
-                                                                            files: cover[0].file
-                                                                        })
-                                                                    }}
+                                                                {/* <FilePond
+                                                                    files={files}
+                                                                    onupdatefiles={setFiles}
+                                                                    allowMultiple={true}
+                                                                    maxFiles={3}
+                                                                    server="http://localhost:3000/api"
                                                                     name="cover" 
                                                                     labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-                                                                    />
-                                                                        <p>1{JSON.stringify(cover)}</p>
-                                                                        <p>2{console.log(cover)}</p>
-                                                                        {/* <p>3{cover.map(item => item.file.name).join(',')}</p> */}
-
-
-
-
-                                                                   
+                                                                    onChange={e => setCover(e.target.files[0])}
+                                                                /> */}
                                                             </div>
                                                             <div className="col-md-12 p-3">
                                                                 <div className="form-group">
                                                                     <label htmlFor="description">Description</label>
                                                                     <textarea name="description" id="description" cols="30" rows="4"  onChange={e => setDescriptioneen(e.target.value)}  value={descriptionen} className="form-control"></textarea>
-                                                                    <span className="text-danger">{errordescriptionen}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -260,6 +240,13 @@ const Profile = () => {
 
 
 
+
+
+
+                                    
+
+
+
                                     <div className="col-md-6  p-3">
                                         <div className="form-group">
                                             <input type="submit" value={isloadingsubmit ? 'loading...' : 'Submit'} disabled={isloadingsubmit}   className="main-btn w-100 text-white " name="submit"  />
@@ -296,7 +283,7 @@ const Profile = () => {
                 </div>
             
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </div>
 
     );

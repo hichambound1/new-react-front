@@ -46,7 +46,7 @@ const Register = () => {
                         localStorage.setItem('auth_token',response.data.token)
                         // localStorage.setItem('auth_user',response.data.user)
                         localStorage.setItem('auth_user', JSON.stringify(response.data.user))
-                        navigate('/')
+                        navigate('/profileregister')
 
                 }).catch(error =>{
                     setIsLoadingsubmit(false);

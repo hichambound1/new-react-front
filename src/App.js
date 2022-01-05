@@ -6,6 +6,7 @@ import Contact from './site/contact/Contact';
 import About from './site/about/About';
 import Notfound from './site/NotFound/Notfound';
 import Profile from './site/Profile/Profile';
+import ProfileRegister from './site/ProfileRegister/ProfileRegister';
 import Forgetpassword from './site/Forgetpassword/Forgetpassword';
 
 import Login from './site/Login/Login';
@@ -46,6 +47,7 @@ function App() {
            <Route exact path="/myresto"        element={<Myresto/>}/> 
            <Route exact path="/login"          element={<Login/>}/> 
            <Route exact path="/register"       element={<Register/>}/> 
+           <Route exact path="/profileregister"        element={<ProfileRegister/>}/> 
            <Route path="*"                      element={<Notfound/>}/> 
           </Routes>
         </div>

@@ -82,11 +82,11 @@ const Dish = () => {
 
     return ( 
         <div>
-         
+
                 <Navbar />
-           
+
             <div className="container mt-5 dishpage">
-            
+
         {isloadingdish && 'loading...'}
                 <div className="row">
                    <div className="col-md-6 p-0 p-md-3 ">
@@ -100,7 +100,7 @@ const Dish = () => {
                                   </div>
                               { photos.map((item)=>(
                                   <div  key={item.id} className='gallery_scroll position-relative' style={{height: '320px'}}>
-                                    <div role="button" className='position-absolute top-0 end-0 m-3' onClick={()=>handleDelete(item.id)}>
+                                    <div role="button" className='position-absolute top-0 end-0 mx-5 my-3 px-3' onClick={()=>handleDelete(item.id)}>
                                       <i class=" lni lni-trash  bg-danger text-white p-2 rounded-pill"></i>
                                     </div>
                                     <img src={`http://localhost:8000/${item.photo}`} alt="" />

@@ -74,7 +74,7 @@ const Navbar = () => {
                                 <Link className="navbar-brand" to="index.html">
                                 <Link to="/">
                                             
-                                    <img src="/assets/images/logo.svg" alt="Logo" />
+                                    <img src="/assets/images/logo.svg"  width={"100px"} alt="Logo" />
                                         </Link>
                                 </Link>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
