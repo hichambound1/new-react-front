@@ -36,7 +36,7 @@ const Mydishes = () => {
             setIsLoading('faild to fetch')
         })
     },[])
-      
+
 
     const breakPoints = [
         { width: 1, itemsToShow: 1 },

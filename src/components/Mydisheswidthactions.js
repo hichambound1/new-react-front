@@ -8,10 +8,10 @@ import Editdish from './Editdish';
 import Adddish from './Adddish';
 import Carousel from 'react-elastic-carousel';
 const Mydishes = () => {
-    
+
     const [data, setData] = useState([]);                    
     const [categories, setCategories] = useState([]);
-  
+
     const [isloading, setIsLoading] = useState(true);
     const [isloadingdish, setIsLoadingdish] = useState(true);
     useEffect( ()=>{
@@ -20,7 +20,7 @@ const Mydishes = () => {
             .then(response => {   
                 setData(response.data.data) 
                 setIsLoadingdish(false)           
-               
+
             }).catch(err =>{
                 setIsLoadingdish('faild to fetch')
             })
@@ -29,7 +29,7 @@ const Mydishes = () => {
         .then(response =>response.json())
         .then(json => {
             const varr =json.data
-            
+
             setCategories(varr) 
             setIsLoading(false)    
         }
@@ -37,8 +37,8 @@ const Mydishes = () => {
             setIsLoading('faild to fetch')    
         })
     },[])
-    
-    
+
+
     const breakPoints = [
         { width: 1,    itemsToShow: 2 },
         { width: 400,  itemsToShow: 3 },

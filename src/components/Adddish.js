@@ -47,7 +47,7 @@ const Adddish = (props) => {
                         setIsLoadingsubmit(false);
                         window.location.reload()
             }).catch(error =>{
-                
+
                 setIsLoadingsubmit(false);
                 if(error.response.data.errors){
                     setErrorphoto(error.response.data.errors.photo)

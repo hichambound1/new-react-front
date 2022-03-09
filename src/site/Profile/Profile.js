@@ -24,7 +24,6 @@ const Profile = () => {
     const [qrValue, setQrValue] = useState("");
     // setQrValue()
     
-
   const downloadQRCode = () => {
     // Generate download with use canvas and stream
     const canvas = document.getElementById("qr-gen");
@@ -125,8 +124,8 @@ const Profile = () => {
     return (
         <div className="profile">
             <Navbar/>
-          
-            
+        
+        
             <div className="container p-3 shadow rounded">
                 <h2 className="text-center text-capitalize m-3">Profile</h2>
                 <div className="row">
@@ -192,11 +191,11 @@ const Profile = () => {
                                                                 <div className="form-group">
                                                                     {/* <label htmlFor="cover">Cover</label> */}
                                                                     <img src={'http://localhost:8000/'+user.cover} width="100px" alt="" />
-                                                                    {/* <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  /> */}
+                                                                    <input type="file" onChange={e => setCover(e.target.files[0])} className="form-control" name="cover"  />
                                                                     <span className="text-danger">{errorcover}</span>
                                                                 </div>
                                                                 
-                                                                <FilePond
+                                                                {/* <FilePond
                                                                     // files={cover}
                                                                     onupdatefiles={cover => {
                                                                         setCover({
@@ -205,7 +204,7 @@ const Profile = () => {
                                                                     }}
                                                                     name="cover" 
                                                                     labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-                                                                    />
+                                                                    /> */}
                                                                         <p>1{JSON.stringify(cover)}</p>
                                                                         <p>2{console.log(cover)}</p>
                                                                         {/* <p>3{cover.map(item => item.file.name).join(',')}</p> */}
